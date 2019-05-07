@@ -1,8 +1,10 @@
 # depslib dependency file v1.0
-1557186739 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\main.cpp
+1557233014 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\main.cpp
 	<iostream>
 	"OpCodeParameters.h"
 	"AddressTranslation.h"
+	"Pass1.h"
+	"WriteFile.h"
 	<regex>
 
 1557186194 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\opcodeparameters.h
@@ -46,10 +48,10 @@
 1557183585 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\instrucion.h
 	<bits/stdc++.h>
 
-1557185053 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\addresstranslation.cpp
+1557233040 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\addresstranslation.cpp
 	"AddressTranslation.h"
 
-1557179936 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\addresstranslation.h
+1557187114 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\addresstranslation.h
 	<string>
 
 1556188950 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\symbol.cpp
@@ -57,16 +59,81 @@
 
 1556188950 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\symbol.h
 
-1557186696 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\pass2.cpp
+1557233632 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\pass2.cpp
 	"Pass2.h"
 	<regex>
 
-1557186684 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\pass2.h
+1557233502 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\pass2.h
 	<unordered_map>
 	<string>
 	"Symbol.h"
-	"Instrucion.h"
+	"Instruction.h"
 	"objectCodeMap.h"
 	"OpCodeParameters.h"
+	"AddressTranslation.h"
 	<vector>
+
+1557232680 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\pass1.h
+	<bits/stdc++.h>
+	"Instruction.h"
+	<objectCodeMap.h>
+	<ReadFile.h>
+	"Symbol.h"
+
+1557231679 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\instruction.h
+	<bits/stdc++.h>
+
+1556281542 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\readfile.h
+	<bits/stdc++.h>
+
+1557232921 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\writefile.h
+	<algorithm>
+	<Symbol.h>
+	<Instruction.h>
+	<stdint.h>
+
+1557231621 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\instruction.cpp
+	"Instruction.h"
+
+1557236171 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\parser.cpp
+	"parser.h"
+	<regex>
+	"objectCodeMap.h"
+	<bits/stdc++.h>
+
+1557233114 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\parser.h
+	<string>
+	<iostream>
+	<regex>
+	"Instruction.h"
+
+1557234457 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\pass1.cpp
+	"Pass1.h"
+	"parser.h"
+	"Instruction.h"
+	<regex>
+
+1557233661 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\print.cpp
+	"print.h"
+
+1557231710 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\print.h
+	"Instruction.h"
+	"Record.h"
+
+1557228662 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\record.h
+	<bits/stdc++.h>
+
+1556281544 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\readfile.cpp
+	"ReadFile.h"
+	<bits/stdc++.h>
+	<iostream>
+
+1557227150 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\record.cpp
+	"Record.h"
+
+1557233562 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\writefile.cpp
+	"WriteFile.h"
+	<unordered_map>
+	<iomanip>
+	<stdint.h>
 
