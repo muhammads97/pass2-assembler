@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PASS2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/PASS2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/PASS2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="include/AddressTranslation.h" />
+		<Unit filename="include/Instrucion.h" />
+		<Unit filename="include/Ob.h" />
+		<Unit filename="include/OpCodeParameters.h" />
+		<Unit filename="include/Pass2.h" />
+		<Unit filename="include/Symbol.h" />
+		<Unit filename="include/objectCodeMap.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/AddressTranslation.cpp" />
+		<Unit filename="src/Instrucion.cpp" />
+		<Unit filename="src/Ob.cpp" />
+		<Unit filename="src/OpCodeParameters.cpp" />
+		<Unit filename="src/Pass2.cpp" />
+		<Unit filename="src/Symbol.cpp" />
+		<Unit filename="src/objectCodeMap.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

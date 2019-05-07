@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1557186739 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\main.cpp
+	<iostream>
+	"OpCodeParameters.h"
+	"AddressTranslation.h"
+	<regex>
+
+1557186194 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\opcodeparameters.h
+	<string>
+
+1557139130 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\opcodes.h
+	<unordered_map>
+	<iostream>
+	<algorithm>
+	"Ob.h"
+
+1556188950 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\ob.h
+	<string>
+	<string.h>
+
+1556188950 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\ob.cpp
+	"Ob.h"
+	"objectCodeMap.h"
+	<iostream>
+
+1556188950 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\objectcodemap.h
+	<unordered_map>
+	"Ob.h"
+
+1557139669 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\opcodes.cpp
+	"OpCodes.h"
+
+1557186169 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\opcodeparameters.cpp
+	"OpCodeParameters.h"
+
+1556188950 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\objectcodemap.cpp
+	"objectCodeMap.h"
+	"Ob.h"
+	<unordered_map>
+	<iostream>
+	<algorithm>
+
+1557183598 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\instrucion.cpp
+	"Instrucion.h"
+
+1557183585 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\instrucion.h
+	<bits/stdc++.h>
+
+1557185053 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\addresstranslation.cpp
+	"AddressTranslation.h"
+
+1557179936 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\addresstranslation.h
+	<string>
+
+1556188950 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\symbol.cpp
+	"Symbol.h"
+
+1556188950 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\symbol.h
+
+1557186696 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\pass2.cpp
+	"Pass2.h"
+	<regex>
+
+1557186684 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\pass2.h
+	<unordered_map>
+	<string>
+	"Symbol.h"
+	"Instrucion.h"
+	"objectCodeMap.h"
+	"OpCodeParameters.h"
+	<vector>
+
