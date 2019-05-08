@@ -6,49 +6,55 @@
 000003                         LDB               #LENGTH           
 000006                         BASE              LENGTH            
 000006       CLOOP             +JSUB             RDREC             
-00000a                         LDA               LENGTH            
-00000d                         COMP              #0                
-000010                         JEQ               ENDFIL            
-000013                         +JSUB             WRREC             
-000017                         J                 CLOOP             
-00001a       ENDFIL            +LDA              =C'EOF'           
-00001e                         STA               BUFFER            
-000021                         LDA               #3                
-000024                         STA               LENGTH            
-000027                         +JSUB             WRREC             
-00002b                         J                 @RETADR           
-00002e       RETADR            RESW              1                 
-000031       LENGTH            RESW              1                 
-000034       BUFFER            RESB              4096              
-001034                                                             .
-001034       RDREC             CLEAR             X                 
-001036                         CLEAR             A                 
-001038                         CLEAR             S                 
-00103a                         +LDA              #4096             
-00103e       RLOOP             TD                INPUT             
-001041                         JEQ               RLOOP             
-001044                         RD                INPUT             
-001047                         COMPR             A,S               
-001049                         JEQ               EXIT              
-00104c                         STCH              BUFFER,X          
-00104f                         TIXR              T                 
-001051                         JLT               RLOOP             
-001054       EXIT              STX               LENGTH            
-001057                         RSUB                                
-00105a       INPUT             BYTE              X'F1'             
-00105b       WRREC             CLEAR             X                 
-00105d                         LDT               LENGTH            
-001060       WLOOP             TD                OUTPUT            
-001063                         JEQ               WLOOP             
-001066                         LDCH              BUFFER,X          
-001069                         WD                OUTPUT            
-00106c                         TIXR              T                 
-00106e                         JLT               WLOOP             
-001071                         RSUB                                
-001074       OUTPUT            BYTE              X'05'             
-001075                         END               FIRST             
+00000a                         +LDA              =X'342412'        
+00000e                         +LDA              =C'EOF'           
+000012                         LDA               LENGTH            
+000015                         COMP              #0                
+000018                         JEQ               ENDFIL            
+00001b                         +JSUB             WRREC             
+00001f                         J                 CLOOP             
+000022       ENDFIL            +LDA              =C'EOF'           
+000026                         STA               BUFFER            
+000029                         LDA               #3                
+00002c                         STA               LENGTH            
+00002f                                                             
+didn't match any valid instruction
+00002f                         +JSUB             WRREC             
+000033                         J                 @RETADR           
+000036       RETADR            RESW              1                 
+000039       LENGTH            RESW              1                 
+00003c       BUFFER            RESB              4096              
+00103c                                                             .
+00103c       RDREC             CLEAR             X                 
+00103e                         CLEAR             A                 
+001040                         CLEAR             S                 
+001042                         +LDA              #4096             
+001046       RLOOP             TD                INPUT             
+001049                         JEQ               RLOOP             
+00104c                         RD                INPUT             
+00104f                         COMPR             A,S               
+001051                         JEQ               EXIT              
+001054                         STCH              BUFFER,X          
+001057                         TIXR              T                 
+001059                         JLT               RLOOP             
+00105c       EXIT              STX               LENGTH            
+00105f                         RSUB                                
+001062       INPUT             BYTE              X'F1'             
+001063       WRREC             CLEAR             X                 
+001065                         LDT               LENGTH            
+001068       WLOOP             TD                OUTPUT            
+00106b                         JEQ               WLOOP             
+00106e                         LDCH              BUFFER,X          
+001071                         WD                OUTPUT            
+001074                         TIXR              T                 
+001076                         JLT               WLOOP             
+001079                         RSUB                                
+00107c       OUTPUT            BYTE              X'05'             
+00107d                         END               FIRST             
 
-001075       454F46            Literal
+00107d       342412            Literal
+001080       454F46            Literal
+001083       454F46            Literal
 
 >>    END    Of    Pass    One 
      ******************************************************************** 
@@ -56,18 +62,18 @@
 
          NAME              VALUE               ABSOL/RELOC 
          ---------------------------------------------------------
-         output            4212                  relocatable
-         wrrec             4187                  relocatable
-         endfil            26                  relocatable
+         output            4220                  relocatable
+         wrrec             4195                  relocatable
+         endfil            34                  relocatable
          cloop             6                  relocatable
-         wloop             4192                  relocatable
-         rloop             4158                  relocatable
+         wloop             4200                  relocatable
+         rloop             4166                  relocatable
          first             0                  relocatable
-         input             4186                  relocatable
+         input             4194                  relocatable
          fu                0                  relocatable
-         retadr            46                  relocatable
-         length            49                  relocatable
-         rdrec             4148                  relocatable
-         buffer            52                  relocatable
-         exit              4180                  relocatable
+         retadr            54                  relocatable
+         length            57                  relocatable
+         rdrec             4156                  relocatable
+         buffer            60                  relocatable
+         exit              4188                  relocatable
      ******************************************************************** 

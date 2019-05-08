@@ -4,6 +4,8 @@ first    STL     RETADR
          LDB     #LENGTH
          BASE    LENGTH
 CLOOP    +JSUB   RDREC
+         +LDA     =X'342412'
+         +LDA     =C'EOF'
          LDA     LENGTH
          COMP    #0
          JEQ     ENDFIL
@@ -13,6 +15,7 @@ ENDFIL   +LDA    =C'EOF'
          STA     BUFFER
          LDA     #3
          STA     LENGTH
+		 LTORG   LENGTH
          +JSUB   WRREC
          J       @RETADR
 RETADR   RESW    1

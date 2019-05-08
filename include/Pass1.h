@@ -20,15 +20,15 @@ class Pass1
         bool valid = true;
         int pc = 0;
         void setIInvalidLiterals();
+        vector<int> ltorg;
     protected:
 
     private:
         vector<string>lines;
+        vector<string> found_literals;
         vector<Instruction>instrucions;
         objectCodeMap obectCode;
-
         void handle_literals(Instruction ins);
-
         bool firstStart = true;
         ReadFile f;
         void readd(string path);

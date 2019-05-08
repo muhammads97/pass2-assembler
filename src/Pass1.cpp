@@ -105,7 +105,7 @@ void Pass1::passOne(){
             firstStart = false;
             int format = obectCode.getTheFormat(op);//+ format get format from opcode
             if(format == -1){
-                int pc2 = get_locctr_address(&instr, pc);// get address from speial character table
+                int pc2 = get_locctr_address(&instr, pc);// get address from special character table
                 if(op != "org" && op != "equ")
                     instr.setFormat(pc2 - pc);
                 pc = pc2;
@@ -382,6 +382,26 @@ int Pass1::get_locctr_address(Instruction* ins,int loc_ctr){
                 }
             }
             return loc_ctr;
+        }else if (op == "ltorg" ){
+           std::string label = ins->getLabel() ;
+           std::string operand = ins->getOperand();
+           if(operand != "" || label != ""){
+            valid = false;
+            ins->setErrorFlag(true);
+            ins->setErrorMsg("LTORG should not have label or operand");
+           } else{
+                for(int i = 0 ; i < literals_data.size() ;i++){
+                    Instruction ins("*", found_literals[i],  "");
+                    ins.setStringOpCode(literals_data[i].second);
+                    ins.setAddress(loc_ctr);
+                    instrucions.push_back(ins);
+                    loc_ctr =+ literals_data[i].first;
+                }
+               literals_data.clear();
+               found_literals.clear();
+                return loc_ctr;
+           }
+            return loc_ctr;
         }else{
             ins->setErrorFlag(true);
             valid = false;
@@ -422,6 +442,7 @@ void Pass1::handle_literals(Instruction ins ) {
                     if(operation == "ldch" ) {
                         if(str.size() == 2 ) {
                             literals_data.push_back(make_pair(1,str));
+                            found_literals.push_back(operand);
                         } else {
                             ins.setErrorFlag(true);
                             valid = false;
@@ -429,6 +450,7 @@ void Pass1::handle_literals(Instruction ins ) {
                         }
                     } else {
                         literals_data.push_back(make_pair(3,str));
+                        found_literals.push_back(operand);
                     }
                 } else {
                     ins.setErrorFlag(true);
@@ -439,6 +461,7 @@ void Pass1::handle_literals(Instruction ins ) {
                     if(operation == "ldch" && str.size() == 1 ) {
                         int x = str[0];
                         literals_data.push_back(make_pair(1,HexFromDecimal(x)));
+                        found_literals.push_back(operand);
                     } else {
                         std::string ssss = "";
                         for(int i = 0 ; i < str.size() ;i++){
@@ -446,6 +469,7 @@ void Pass1::handle_literals(Instruction ins ) {
                             ssss += HexFromDecimal(x);
                         }
                         literals_data.push_back(make_pair(3,ssss));
+                        found_literals.push_back(operand);
                     }
                 } else {
                     ins.setErrorFlag(true);
