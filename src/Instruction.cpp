@@ -76,6 +76,10 @@ void Instruction::setPass2ErrMsg(std::string msg){
     this->pass2ErrMsg = msg;
 }
 
+string Instruction::toString(){
+    return label + "    " + operation + "    " + operand + "    " + comment;
+}
+
 Instruction::~Instruction()
 {
     //dtor

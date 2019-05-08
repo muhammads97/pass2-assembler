@@ -1,6 +1,7 @@
 #ifndef INSTRUCION_H
 #define INSTRUCION_H
 #include<bits/stdc++.h>
+using namespace std;
 class Instruction
 {
     private:
@@ -21,6 +22,7 @@ class Instruction
         std::string operand;
         std::string comment;
     public:
+        string toString();
         void setOpCode(int opCode);
         int getOpCode();
         Instruction(std::string l, std::string op, std::string oper);
@@ -45,6 +47,7 @@ class Instruction
         bool ishasOpCode();
         bool isPass2Err();
         void setPass2ErrMsg(std::string msg);
+        bool extended = false;
     protected:
 
 };

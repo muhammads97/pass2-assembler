@@ -35,20 +35,32 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/AddressTranslation.h" />
-		<Unit filename="include/Instrucion.h" />
+		<Unit filename="include/Instruction.h" />
 		<Unit filename="include/Ob.h" />
 		<Unit filename="include/OpCodeParameters.h" />
+		<Unit filename="include/Pass1.h" />
 		<Unit filename="include/Pass2.h" />
+		<Unit filename="include/ReadFile.h" />
+		<Unit filename="include/Record.h" />
 		<Unit filename="include/Symbol.h" />
+		<Unit filename="include/WriteFile.h" />
 		<Unit filename="include/objectCodeMap.h" />
+		<Unit filename="include/parser.h" />
+		<Unit filename="include/print.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/AddressTranslation.cpp" />
-		<Unit filename="src/Instrucion.cpp" />
+		<Unit filename="src/Instruction.cpp" />
 		<Unit filename="src/Ob.cpp" />
 		<Unit filename="src/OpCodeParameters.cpp" />
+		<Unit filename="src/Pass1.cpp" />
 		<Unit filename="src/Pass2.cpp" />
+		<Unit filename="src/ReadFile.cpp" />
+		<Unit filename="src/Record.cpp" />
 		<Unit filename="src/Symbol.cpp" />
+		<Unit filename="src/WriteFile.cpp" />
 		<Unit filename="src/objectCodeMap.cpp" />
+		<Unit filename="src/parser.cpp" />
+		<Unit filename="src/print.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
