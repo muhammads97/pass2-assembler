@@ -2,18 +2,24 @@
 #define PASS2_H
 #include <unordered_map>
 #include <string>
+#include <regex>
 #include "Symbol.h"
 #include "Instruction.h"
 #include "objectCodeMap.h"
 #include "OpCodeParameters.h"
 #include "AddressTranslation.h"
 #include <vector>
+#include <iomanip>
 using namespace std;
+using namespace std::regex_constants;
 
+void parseReg(string operand, string &r1, string &r2);
+int regValue(string reg);
 string HexFromDecimal(int num);
 string hexa_format_of_literal(string str);
 string getIndexedSymbol(string indexed);
 bool isIndexedAddressing(string operand);
+string byteHandler(string operand);
 class Pass2
 {
     public:

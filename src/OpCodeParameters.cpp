@@ -7,6 +7,13 @@ OpCodeParameters::OpCodeParameters()
 
 void OpCodeParameters::setOperation(int operation){
     this->operation = operation;
+    if(operation == 0x90 || operation == 0xA0 || operation == 0x9C || operation == 0x98 || operation == 0xAC || operation == 0x94){
+        twoReg = true;
+    } else if (operation == 0xB4 || operation == 0xB8){
+        oneReg = true;
+    } else if (operation == 0xA4 || operation == 0xA8){
+        shift = true;
+    }
 }
 void OpCodeParameters::setN(bool n){
     this->n = n;
@@ -30,6 +37,11 @@ void OpCodeParameters::setAddress(int address){
     this->address = address;
 }
 int OpCodeParameters::getObjectCode(){
+    if(twoReg || oneReg || shift){
+        int obCode = operation << 8;
+        obCode = obCode | address;
+        return obCode;
+    }
     //calculating first byte ( op code + n + i)
     int f2byte;
     if(n){

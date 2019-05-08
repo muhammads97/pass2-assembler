@@ -29,6 +29,9 @@ class OpCodeParameters
         int operation = 0;
         int address = 0;
         int opCode = 0;
+        bool oneReg = false;
+        bool twoReg = false;
+        bool shift = false;
 };
 
 #endif // OPCODEPARAMETERS_H

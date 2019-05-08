@@ -30,6 +30,11 @@ int displacement(int locctr, int operandAddress, int baseAddress, bool e, bool &
     } else {
         int disp = operandAddress - locctr;
         if(disp > 2047 || disp < -2048) {
+            if(baseAddress == 16777215){
+                b = true;
+                p = false;
+                return baseAddress;
+            }
             disp = operandAddress - baseAddress;
             if(disp > 4095 || disp < 0){
                 disp = 16777215;

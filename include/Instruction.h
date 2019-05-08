@@ -1,6 +1,7 @@
 #ifndef INSTRUCION_H
 #define INSTRUCION_H
 #include<bits/stdc++.h>
+#include <iomanip>
 using namespace std;
 class Instruction
 {
@@ -47,7 +48,11 @@ class Instruction
         bool ishasOpCode();
         bool isPass2Err();
         void setPass2ErrMsg(std::string msg);
+        void setLongObjectCode(string obCode);
+        string getLongObjectCode();
         bool extended = false;
+        bool isByte = false;
+        string longObjectCode;
     protected:
 
 };

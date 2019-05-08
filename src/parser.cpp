@@ -6,14 +6,15 @@ using namespace std;
 void check(Instruction* i);
 bool isHex(std::string s);
 Instruction parse(std::string in){
+    //transform(in.begin(), in.end(), in.begin(), ::tolower);
     using namespace std::regex_constants;
-    regex operation_one_operand(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(\\+)?(ADD|ADDF|AND|COMP|COMPF|DIV|DIVF|J|JEQ|JGT|JLT|JSUB|LDA|LDB|LDCH|LDF|LDL|LDS|LDT|LDX|LPS|MUL|MULF|OR|RD|SSK|STA|STB|STCH|STF|STI|STL|STS|STSW|STT|STX|SUB|SUBF|TD|TIX|WD) *( +([#@\\*a-zA-Z0-9\'\\+\\-=]+)) *(\\..*)?");
-    regex operation_one_register(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(CLEAR|TIXR) *( +([AXLBSTFaxlbstf])) *(\\..*)?");
-    regex operation_two_register(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(ADDR|COMPR|DIVR|MULR|RMO|SUBR) *( +([AXLBSTFaxlbstf] *, *[AXLBSTFaxlbstf])) *(\\..*)?");
-    regex shift_operations(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(SHIFTL|SHIFTR|SVC) *( +([AXLBSTFaxlbstf] *, *[0-9]+)) *(\\..*)?");
-    regex operation_no_operand(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(\\+)?(FIX|FLOAT|HIO|NORM|RSUB|SIO|TIO) *(\\..*)?");
-    regex commentRegex(" *\\..*");
-    regex directives(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(\\+)?(START|ORG|BASE|NOBASE|LTORG|END|RESW|RESW|RESB|WORD|BYTE|EQU) *( +([#@\\*a-zA-Z0-9\'\\+\\-=]+)) *(\\..*)?");
+    regex operation_one_operand(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(\\+)?(ADD|ADDF|AND|COMP|COMPF|DIV|DIVF|J|JEQ|JGT|JLT|JSUB|LDA|LDB|LDCH|LDF|LDL|LDS|LDT|LDX|LPS|MUL|MULF|OR|RD|SSK|STA|STB|STCH|STF|STI|STL|STS|STSW|STT|STX|SUB|SUBF|TD|TIX|WD) *( +([#@\\*a-zA-Z0-9\'\\+\\-=]+)) *(\\..*)?", icase);
+    regex operation_one_register(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(CLEAR|TIXR) *( +([AXLBSTFaxlbstf])) *(\\..*)?", icase);
+    regex operation_two_register(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(ADDR|COMPR|DIVR|MULR|RMO|SUBR) *( +([AXLBSTFaxlbstf] *, *[AXLBSTFaxlbstf])) *(\\..*)?", icase);
+    regex shift_operations(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(SHIFTL|SHIFTR|SVC) *( +([AXLBSTFaxlbstf] *, *[0-9]+)) *(\\..*)?", icase);
+    regex operation_no_operand(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(\\+)?(FIX|FLOAT|HIO|NORM|RSUB|SIO|TIO) *(\\..*)?", icase);
+    regex commentRegex(" *\\..*", icase);
+    regex directives(" *((([a-zA-Z][a-zA-Z0-9]*) +)?) *(\\+)?(START|ORG|BASE|NOBASE|LTORG|END|RESW|RESW|RESB|WORD|BYTE|EQU) *( +([#@\\*a-zA-Z0-9\'\\+\\-=]+)) *(\\..*)?", icase);
     if(regex_match(in, operation_one_operand)){
         smatch m;
         if(regex_search(in, m, operation_one_operand)){
@@ -163,6 +164,7 @@ Instruction parse(std::string in){
                 i.setCommentflag(true);
                 i.setCommentMsg(comment);
             }
+            if(operation == string("byte") || operation == string("BYTE")) i.isByte = true;
             check(&i);
             return i;
         }
