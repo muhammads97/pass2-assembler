@@ -344,6 +344,10 @@ string byteHandler(string operand){
     return string("");
 }
 
+bool isExpression(string operand){
+    regex r("()(\\+|\\-|\\*|\\/)([a-zA-Z0-9])")
+}
+
 /*string HexFromDecimal(int num) {
     int temp = num;
     int i = 0, j, r ;
