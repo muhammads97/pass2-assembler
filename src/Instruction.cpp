@@ -1,6 +1,18 @@
 #include "Instruction.h"
 
+<<<<<<< HEAD
 Instruction::Instruction(std::string l, std::string op, std::string oper) {
+=======
+Instruction::Instruction(std::string l, std::string op, std::string oper)
+{
+    transform(l.begin(), l.end(), l.begin(), ::tolower);
+    transform(op.begin(), op.end(), op.begin(), ::tolower);
+    regex r("=([Xx]|[cC])\'([a-zA-Z0-9]+)\'");
+    regex r2("([Cc]|[Xx])\'(.+)\'");
+    if(!regex_match(oper, r) && !regex_match(oper, r2)){
+        transform(oper.begin(), oper.end(), oper.begin(), ::tolower);
+    }
+>>>>>>> 0fc3709be6194ff33e336633736107dc02562869
     label = l;
     operation = op;
     operand = oper;
@@ -74,9 +86,36 @@ void Instruction::setPass2ErrMsg(std::string msg) {
     this->pass2Error = true;
     this->pass2ErrMsg = msg;
 }
+<<<<<<< HEAD
 
 string Instruction::toString() {
     return label + "    " + operation + "    " + operand + "    " + comment;
+=======
+void Instruction::setLongObjectCode(string obCode){
+    this->longObjectCode = obCode;
+    this->hasOpCode = true;
+}
+string Instruction::getLongObjectCode(){
+    return longObjectCode;
+}
+string Instruction::toString(){
+    if(pass2Error){
+        return pass2ErrMsg;
+    }
+    if(hasOpCode){
+        stringstream ss;
+        ss << hex << address;
+        if(isByte){
+            return label + "    " + operation + "    " + operand + "    " + comment + "    " + ss.str() + "      " + longObjectCode;
+        }
+        stringstream ss2;
+        ss2 << hex << opCode;
+        return label + "    " + operation + "    " + operand + "    " + comment + "    " + ss.str() + "      " + ss2.str();
+    }
+    stringstream ss;
+    ss << hex << address;
+    return label + "    " + operation + "    " + operand + "    " + comment + "    " + ss.str();
+>>>>>>> 0fc3709be6194ff33e336633736107dc02562869
 }
 void Instruction::setStringOpCode(string string_opCode) {
     this->string_opCode = string_opCode;
