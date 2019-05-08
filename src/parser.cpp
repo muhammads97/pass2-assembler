@@ -172,41 +172,49 @@ Instruction parse(std::string in) {
             return i;
         }
     } else if(regex_match(in, endDirective)) {
-        string symbol = "";
-        string operation;
-        string operand;
-        string comment;
-        bool e = false;
-        //symbol = m.str(3);
-        operation = m.str(1);
-        operand = m.str(3);
-        comment = m.str(4);
-        Instruction i(symbol, operation, operand);
-        i.extended = e;
-        if(comment.size() > 0) {
-            i.setCommentflag(true);
-            i.setCommentMsg(comment);
+        smatch m;
+        if(regex_search(in, m, endDirective)) {
+            string symbol = "";
+            string operation;
+            string operand;
+            string comment;
+            bool e = false;
+            //symbol = m.str(3);
+            operation = m.str(1);
+            operand = m.str(3);
+            comment = m.str(4);
+            Instruction i(symbol, operation, operand);
+            i.extended = e;
+            if(comment.size() > 0) {
+                i.setCommentflag(true);
+                i.setCommentMsg(comment);
+            }
+            check(&i);
+            return i;
         }
-        check(&i);
-        return i;
+
     } else if(regex_match(in, NOBASELTORGDirective)) {
-        string symbol = "";
-        string operation;
-        string operand = "";
-        string comment;
-        bool e = false;
-        //symbol = m.str(3);
-        operation = m.str(1);
-        //operand = m.str(3);
-        comment = m.str(2);
-        Instruction i(symbol, operation, operand);
-        i.extended = e;
-        if(comment.size() > 0) {
-            i.setCommentflag(true);
-            i.setCommentMsg(comment);
+        smatch m;
+        if(regex_search(in, m, NOBASELTORGDirective)) {
+            string symbol = "";
+            string operation;
+            string operand = "";
+            string comment;
+            bool e = false;
+            //symbol = m.str(3);
+            operation = m.str(1);
+            //operand = m.str(3);
+            comment = m.str(2);
+            Instruction i(symbol, operation, operand);
+            i.extended = e;
+            if(comment.size() > 0) {
+                i.setCommentflag(true);
+                i.setCommentMsg(comment);
+            }
+            check(&i);
+            return i;
         }
-        check(&i);
-        return i;
+
     } else {
         Instruction i("", "", "");
         i.setErrorFlag(true);
