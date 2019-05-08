@@ -140,18 +140,19 @@
 	<iomanip>
 	<stdint.h>
 
-1557322638 source:c:\users\shiko\git\assemblypass2\main.cpp
+1557354864 source:c:\users\shiko\git\assemblypass2\main.cpp
 	<iostream>
 	"OpCodeParameters.h"
 	"AddressTranslation.h"
 	"Pass1.h"
 	"WriteFile.h"
+	"Pass2.h"
 	<regex>
 
-1557222592 c:\users\shiko\git\assemblypass2\include\opcodeparameters.h
+1557354864 c:\users\shiko\git\assemblypass2\include\opcodeparameters.h
 	<string>
 
-1557222592 c:\users\shiko\git\assemblypass2\include\addresstranslation.h
+1557354864 c:\users\shiko\git\assemblypass2\include\addresstranslation.h
 	<string>
 
 1557352678 c:\users\shiko\git\assemblypass2\include\pass1.h
@@ -161,8 +162,9 @@
 	<ReadFile.h>
 	"Symbol.h"
 
-1557353216 c:\users\shiko\git\assemblypass2\include\instruction.h
+1557354867 c:\users\shiko\git\assemblypass2\include\instruction.h
 	<bits/stdc++.h>
+	<iomanip>
 
 1557222592 c:\users\shiko\git\assemblypass2\include\objectcodemap.h
 	<unordered_map>
@@ -183,10 +185,10 @@
 	<Instruction.h>
 	<stdint.h>
 
-1557322638 source:c:\users\shiko\git\assemblypass2\src\addresstranslation.cpp
+1557354864 source:c:\users\shiko\git\assemblypass2\src\addresstranslation.cpp
 	"AddressTranslation.h"
 
-1557353297 source:c:\users\shiko\git\assemblypass2\src\instruction.cpp
+1557355395 source:c:\users\shiko\git\assemblypass2\src\instruction.cpp
 	"Instruction.h"
 
 1557222593 source:c:\users\shiko\git\assemblypass2\src\ob.cpp
@@ -201,7 +203,7 @@
 	<iostream>
 	<algorithm>
 
-1557222593 source:c:\users\shiko\git\assemblypass2\src\opcodeparameters.cpp
+1557354864 source:c:\users\shiko\git\assemblypass2\src\opcodeparameters.cpp
 	"OpCodeParameters.h"
 
 1557322638 source:c:\users\shiko\git\assemblypass2\src\parser.cpp
@@ -243,19 +245,20 @@
 	<iomanip>
 	<stdint.h>
 
-1557351187 source:c:\users\shiko\git\assemblypass2\src\pass2.cpp
+1557354864 source:c:\users\shiko\git\assemblypass2\src\pass2.cpp
 	"Pass2.h"
-	<regex>
 
-1557322638 c:\users\shiko\git\assemblypass2\include\pass2.h
+1557354864 c:\users\shiko\git\assemblypass2\include\pass2.h
 	<unordered_map>
 	<string>
+	<regex>
 	"Symbol.h"
 	"Instruction.h"
 	"objectCodeMap.h"
 	"OpCodeParameters.h"
 	"AddressTranslation.h"
 	<vector>
+	<iomanip>
 
 1557354226 source:c:\users\shiko\git\assemblypass2\src\pass1.cpp
 	"Pass1.h"
