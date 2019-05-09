@@ -1,0 +1,91 @@
+ Source Program Statements With Value of LC indicated 
+
+000000                                                             .23456789012345678901234567890123456
+000000                                                             .
+000000                         start             5                 
+000005       bgn               lda               #0                
+000008       forone            lda               i                 
+00000b                         comp              length            
+00000e                         jlt               con               
+000011                         j                 finish            
+000014       con               lda               length            
+000017                         sub               i                 
+00001a       l                 equ               forone-con        
+00001a                         sta               until             
+00001d                         lda               #0                
+000020                         sta               j                 
+000023       fortwo            lda               j                 
+000026                         comp              until             
+000029                         jlt               contwo            
+00002c                         lda               i                 
+00002f                         add               #1                
+000032                         sta               i                 
+000035                         j                 forone            
+000038       contwo            ldx               j                 
+00003b                         ldch              str,x             
+00003e                         rmo               a,t               
+000040                         lda               j                 
+000043                         add               #1                
+000046                         sta               j2                
+000049                         ldx               j2                
+00004c                         ldch              str,x             
+00004f                         compr             a,t               
+000051                         jsub              swap              
+000054       conloop           lda               j2                
+000057                         sta               j                 
+00005a                         comp              until             
+00005d                         jlt               fortwo            
+000060                         lda               i                 
+000063                         add               #1                
+000066                         sta               i                 
+000069                         j                 forone            
+00006c       finish            j                 *                 
+00006f                                                             .
+00006f       str               byte              C'fedcba'         
+000075       length            word              6                 
+000078       until             resw              1                 
+00007b       i                 word              0                 
+00007e       j                 word              0                 
+000081       j2                resw              1                 
+000084       temp              resb              1                 
+000085       swap              jlt               ch                
+000088                         rsub                                
+00008b       ch                ldx               j2                
+00008e                         ldch              str,x             
+000091                         stch              temp              
+000094                         ldx               j                 
+000097                         ldch              str,x             
+00009a                         ldx               j2                
+00009d                         stch              str,x             
+0000a0                         ldx               j                 
+0000a3                         ldch              temp              
+0000a6                         stch              str,x             
+0000a9                         rsub                                
+0000ac                         end               5                 
+should be relative end
+
+
+>>    END    Of    Pass    One 
+     ******************************************************************** 
+>>    s y m b o l     t a b l e   (values in decimal) 
+
+         NAME              VALUE               ABSOL/RELOC 
+         ---------------------------------------------------------
+         ch                139                  relocatable
+         swap              133                  relocatable
+         temp              132                  relocatable
+         j2                129                  relocatable
+         i                 123                  relocatable
+         until             120                  relocatable
+         l                 -12                  absolute
+         str               111                  relocatable
+         bgn               5                  relocatable
+         con               20                  relocatable
+         fortwo            35                  relocatable
+         contwo            56                  relocatable
+         conloop           84                  relocatable
+         j                 126                  relocatable
+         finish            108                  relocatable
+         forone            8                  relocatable
+         length            117                  relocatable
+     ******************************************************************** 

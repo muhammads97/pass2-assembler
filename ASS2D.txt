@@ -1,0 +1,62 @@
+.23456789012345678901234567890123456
+.
+         START   5
+BGN      LDA     #0
+FORONE   LDA     I
+         COMP    LENGTH
+         JLT     CON
+         J       FINISH
+CON      LDA     LENGTH
+         SUB     I
+L        EQU     FORONE-CON
+         STA     UNTIL
+         LDA     #0
+         STA     J
+FORTWO   LDA     J
+         COMP    UNTIL
+         JLT     CONTWO
+         LDA     I
+         ADD     #1
+         STA     I
+         J       FORONE
+CONTWO   LDX     J
+         LDCH    STR,x
+         RMO     A,T
+         LDA     J
+         ADD     #1
+         STA     J2
+         LDX     J2
+         LDCH    str,x
+         COMPR   A,T
+         JSUB    SWAP
+CONLOOP  LDA     J2
+         STA     J
+         COMP    UNTIL
+         JLT     FORTWO
+         LDA     I
+         ADD     #1
+         STA     I
+         J       FORONE
+FINISH   J       *
+.
+STR      BYTE    C'fedcba'
+LENGTH   WORD    6
+UNTIL    RESW    1
+I        WORD    0
+J        WORD    0
+J2       RESW    1
+TEMP     RESB    1    
+SWAP     JLT     CH
+         RSUB
+CH       LDX     J2
+         LDCH    STR,x
+         STCH    TEMP
+         LDX     J
+         LDCH    STR,x
+         LDX     J2
+         STCH    STR,x
+         LDX     J
+         LDCH    TEMP
+         STCH    STR,x
+         RSUB
+         END     5

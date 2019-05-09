@@ -1,0 +1,36 @@
+ Source Program Statements With Value of LC indicated 
+
+000000                                                             .23456789012345678901234567890123456
+000000                                                             .   
+000000                         start             0                 
+000000       bgn               lda               beta              
+000003       h                 byte              c'ahmed'          
+000008                         compr             t,x               
+00000a                         mul               #4                
+00000d                         sta               alpha             
+000010                         lda               gamma             
+000013                         mul               #3                
+000016                         add               alpha             
+000019                         sta               alpha             
+00001c                         j                 *                 
+00001f                                                             .
+00001f       beta              word              2                 
+000022       gamma             word              2                 
+000025       m                 word              4                 
+000028       alpha             resw              1                 
+00002b                         end                                 
+
+
+>>    END    Of    Pass    One 
+     ******************************************************************** 
+>>    s y m b o l     t a b l e   (values in decimal) 
+
+         NAME              VALUE               ABSOL/RELOC 
+         ---------------------------------------------------------
+         alpha             40                  relocatable
+         m                 37                  relocatable
+         bgn               0                  relocatable
+         h                 3                  relocatable
+         beta              31                  relocatable
+         gamma             34                  relocatable
+     ******************************************************************** 
