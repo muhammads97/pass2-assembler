@@ -266,3 +266,130 @@
 	"Instruction.h"
 	<regex>
 
+1557351724 source:e:\mydesk\projects\salah\pass2-assembler\src\addresstranslation.cpp
+	"AddressTranslation.h"
+
+1557351724 e:\mydesk\projects\salah\pass2-assembler\include\addresstranslation.h
+	<string>
+
+1557406764 source:e:\mydesk\projects\salah\pass2-assembler\src\instruction.cpp
+	"Instruction.h"
+
+1557406763 e:\mydesk\projects\salah\pass2-assembler\include\instruction.h
+	<bits/stdc++.h>
+	<iomanip>
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\ob.cpp
+	"Ob.h"
+	"objectCodeMap.h"
+	<iostream>
+
+1557264786 e:\mydesk\projects\salah\pass2-assembler\include\ob.h
+	<string>
+	<string.h>
+
+1557264787 e:\mydesk\projects\salah\pass2-assembler\include\objectcodemap.h
+	<unordered_map>
+	"Ob.h"
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\objectcodemap.cpp
+	"objectCodeMap.h"
+	"Ob.h"
+	<unordered_map>
+	<iostream>
+	<algorithm>
+
+1557351724 source:e:\mydesk\projects\salah\pass2-assembler\src\opcodeparameters.cpp
+	"OpCodeParameters.h"
+
+1557351724 e:\mydesk\projects\salah\pass2-assembler\include\opcodeparameters.h
+	<string>
+
+1557356095 source:e:\mydesk\projects\salah\pass2-assembler\src\parser.cpp
+	"parser.h"
+	<regex>
+	"objectCodeMap.h"
+	<bits/stdc++.h>
+
+1557264787 e:\mydesk\projects\salah\pass2-assembler\include\parser.h
+	<string>
+	<iostream>
+	<regex>
+	"Instruction.h"
+
+1557359749 source:e:\mydesk\projects\salah\pass2-assembler\src\print.cpp
+	"print.h"
+
+1557264787 e:\mydesk\projects\salah\pass2-assembler\include\print.h
+	"Instruction.h"
+	"Record.h"
+
+1557407625 e:\mydesk\projects\salah\pass2-assembler\include\record.h
+	<bits/stdc++.h>
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\readfile.cpp
+	"ReadFile.h"
+	<bits/stdc++.h>
+	<iostream>
+
+1557264786 e:\mydesk\projects\salah\pass2-assembler\include\readfile.h
+	<bits/stdc++.h>
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\record.cpp
+	"Record.h"
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\symbol.cpp
+	"Symbol.h"
+
+1557264786 e:\mydesk\projects\salah\pass2-assembler\include\symbol.h
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\writefile.cpp
+	"WriteFile.h"
+	<unordered_map>
+	<iomanip>
+	<stdint.h>
+
+1557264786 e:\mydesk\projects\salah\pass2-assembler\include\writefile.h
+	<algorithm>
+	<Symbol.h>
+	<Instruction.h>
+	<stdint.h>
+
+1557407345 source:e:\mydesk\projects\salah\pass2-assembler\main.cpp
+	<iostream>
+	"OpCodeParameters.h"
+	"AddressTranslation.h"
+	"Pass1.h"
+	"WriteFile.h"
+	"Pass2.h"
+	<regex>
+	"print.h"
+
+1557406764 e:\mydesk\projects\salah\pass2-assembler\include\pass1.h
+	<bits/stdc++.h>
+	"Instruction.h"
+	<objectCodeMap.h>
+	<ReadFile.h>
+	"Symbol.h"
+
+1557406764 e:\mydesk\projects\salah\pass2-assembler\include\pass2.h
+	<unordered_map>
+	<string>
+	<regex>
+	"Symbol.h"
+	"Instruction.h"
+	"objectCodeMap.h"
+	"OpCodeParameters.h"
+	"AddressTranslation.h"
+	<vector>
+	<iomanip>
+
+1557406765 source:e:\mydesk\projects\salah\pass2-assembler\src\pass1.cpp
+	"Pass1.h"
+	"parser.h"
+	"Instruction.h"
+	<regex>
+
+1557406765 source:e:\mydesk\projects\salah\pass2-assembler\src\pass2.cpp
+	"Pass2.h"
+

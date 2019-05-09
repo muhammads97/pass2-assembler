@@ -61,8 +61,7 @@
 0000a3                         ldch              temp              
 0000a6                         stch              str,x             
 0000a9                         rsub                                
-0000ac                         end               5                 
-should be relative end
+0000ac                         end                                 
 
 
 >>    END    Of    Pass    One 
