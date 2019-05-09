@@ -15,6 +15,7 @@ using namespace std::regex_constants;
 
 void parseReg(string operand, string &r1, string &r2);
 int regValue(string reg);
+bool isExpression(string operand);
 string HexFromDecimal(int num);
 string hexa_format_of_literal(string str);
 string getIndexedSymbol(string indexed);
@@ -43,6 +44,7 @@ class Pass2
         void setBaseAddress(string operand);
         int getLiteralValue(string operand);
         int getNumericOperand(string operand);
+        int getExpressionValue(string operand);
 };
 
 #endif // PASS2_H

@@ -32,7 +32,7 @@ RLOOP    TD      INPUT
          STCH    BUFFER,X
          TIXR    T
          JLT     RLOOP
-EXIT     STX     LENGTH
+EXIT     equ     RLOOP-LENGTH
          RSUB
 INPUT    BYTE    X'F1'
 WRREC    CLEAR   X

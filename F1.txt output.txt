@@ -34,20 +34,20 @@
 00104e                         stch              buffer,x          
 001051                         tixr              t                 
 001053                         jlt               rloop             
-001056       exit              stx               length            
-001059                         rsub                                
-00105c       input             byte              X'F1'             
-00105d       wrrec             clear             x                 
-00105f                         ldt               length            
-001062       wloop             td                output            
-001065                         jeq               wloop             
-001068                         ldch              buffer,x          
-00106b                         wd                output            
-00106e                         tixr              t                 
-001070                         jlt               wloop             
-001073                         rsub                                
-001076       output            byte              X'05'             
-001077                         end               first             
+001056       exit              equ               rloop-length      
+001056                         rsub                                
+001059       input             byte              X'F1'             
+00105a       wrrec             clear             x                 
+00105c                         ldt               length            
+00105f       wloop             td                output            
+001062                         jeq               wloop             
+001065                         ldch              buffer,x          
+001068                         wd                output            
+00106b                         tixr              t                 
+00106d                         jlt               wloop             
+001070                         rsub                                
+001073       output            byte              X'05'             
+001074                         end                                 
 
 
 >>    END    Of    Pass    One 
@@ -56,15 +56,15 @@
 
          NAME              VALUE               ABSOL/RELOC 
          ---------------------------------------------------------
-         output            4214                  relocatable
-         wrrec             4189                  relocatable
-         exit              4182                  relocatable
+         output            4211                  relocatable
+         wrrec             4186                  relocatable
+         exit              4109                  absolute
          endfil            26                  relocatable
          cloop             6                  relocatable
-         wloop             4194                  relocatable
+         wloop             4191                  relocatable
          rloop             4160                  relocatable
          first             0                  relocatable
-         input             4188                  relocatable
+         input             4185                  relocatable
          fu                0                  relocatable
          eof               45                  relocatable
          retadr            48                  relocatable

@@ -152,6 +152,22 @@ vector<Instruction> Pass2::execute() {
                     opTab[j].setPass2ErrMsg("symbol not found or address exceeded size");
                 }
                 disp = displacement(locctr, operandHex, base, e, b, p);
+            } else if (isExpression(operand)){
+                if(operand[0] == '#'){
+                    i = true;
+                    n = false;
+                } else if (operand[0] == '@'){
+                    n = true;
+                    i = false;
+                } else {
+                    n = true;
+                    i = true;
+                }
+                operandHex = getExpressionValue(operand);
+                if(operandHex == 16777215 || operandHex < 0){
+                    opTab[j].setPass2ErrMsg("invalid expression or negative value address");
+                }
+                disp = displacement(locctr, operandHex, base, e, b, p);
             } else {
                 if(opHex == 0x90 || opHex == 0xA0 || opHex == 0x9C || opHex == 0x98 || opHex == 0xAC || opHex == 0x94){
                     string r1;
@@ -345,22 +361,31 @@ string byteHandler(string operand){
 }
 
 bool isExpression(string operand){
-    regex r("()(\\+|\\-|\\*|\\/)([a-zA-Z0-9])")
+    regex r("((#|@)?([a-zA-Z0-9]+))(\\+|\\-|\\*|\\/)([a-zA-Z0-9]+)");
+    //cout << regex_match(operand, r);
+    return regex_match(operand, r);
 }
 
-/*string HexFromDecimal(int num) {
-    int temp = num;
-    int i = 0, j, r ;
-    string hex = "";
-    while (temp != 0) {
-        r = temp % 16;
-        if (r < 10) {
-            hex += r + 48;
-        } else {
-            hex += r + 55;
+int Pass2::getExpressionValue(string operand){
+    regex r("([a-zA-Z0-9]+)(\\+|\\-|\\*|\\/)([a-zA-Z0-9]+)");
+    smatch m;
+    if(regex_search(operand, m, r)){
+        string sym1 = m.str(1);
+        string op = m.str(2);
+        string sym2 = m.str(3);
+        int v1 = getNumericOperand(sym1);
+        int v2 = getNumericOperand(sym2);
+        if(v1 == 16777215 || v2 == 16777215){
+            return 16777215;
         }
-        temp = temp / 16 ;
+        if(op == string("+")){
+            return v1+v2;
+        } else if(op == string("-")){
+            return v1 - v2;
+        } else if(op == string("*")){
+            return v1*v2;
+        } else if(op == string("/")){
+            return v1/v2;
+        }
     }
-    reverse(hex.begin(), hex.end());
-    return hex;
-}*/
+}
