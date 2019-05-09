@@ -20,44 +20,49 @@
 00002e                         ltorg                               
 00002e       *                 =x'342412'                          
 000031       *                 =c'eof'                             
-000034                         +lda              =X'311412'        
-000038                         +lda              =C'COF'           
+000034                         +lda              =X'332412'        
+000038                         +lda              =C'EpF'           
 00003c                         +jsub             wrrec             
-000040                         j                 @retadr           
-000043       eof               byte              C'EOF'            
-000046       retadr            resw              1                 
-000049       length            resw              1                 
-00004c       buffer            resb              4096              
-00104c                                                             .
-00104c       rdrec             clear             x                 
-00104e                         clear             a                 
-001050                         clear             s                 
-001052                         +ldt              #4096             
-001056       rloop             td                input             
-001059                         jeq               rloop             
-00105c                         rd                input             
-00105f                         compr             a,s               
-001061                         jeq               exit              
-001064                         stch              buffer,x          
-001067                         tixr              t                 
-001069                         jlt               rloop             
-00106c       exit              stx               length            
-00106f                         rsub                                
-001072       input             byte              X'F1'             
-001073       wrrec             clear             x                 
-001075                         ldt               length            
-001078       wloop             td                output            
-00107b                         jeq               wloop             
-00107e                         ldch              buffer,x          
-001081                         wd                output            
-001084                         tixr              t                 
-001086                         jlt               wloop             
-001089                         rsub                                
-00108c       output            byte              X'05'             
-00108d                         end                                 
+000040                         ltorg                               
+000040       *                 =x'332412'                          
+000043       *                 =c'epf'                             
+000046                         +lda              =X'336412'        
+00004a                         +lda              =C'Ept'           
+00004e                         j                 @retadr           
+000051       eof               byte              C'EOF'            
+000054       retadr            resw              1                 
+000057       length            resw              1                 
+00005a       buffer            resb              4096              
+00105a                                                             .
+00105a       rdrec             clear             x                 
+00105c                         clear             a                 
+00105e                         clear             s                 
+001060                         +ldt              #4096             
+001064       rloop             td                input             
+001067                         jeq               rloop             
+00106a                         rd                input             
+00106d                         compr             a,s               
+00106f                         jeq               exit              
+001072                         stch              buffer,x          
+001075                         tixr              t                 
+001077                         jlt               rloop             
+00107a       exit              stx               length            
+00107d                         rsub                                
+001080       input             byte              X'F1'             
+001081       wrrec             clear             x                 
+001083                         ldt               length            
+001086       wloop             td                output            
+001089                         jeq               wloop             
+00108c                         ldch              buffer,x          
+00108f                         wd                output            
+001092                         tixr              t                 
+001094                         jlt               wloop             
+001097                         rsub                                
+00109a       output            byte              X'05'             
+00109b                         end                                 
 
-00108d       311412            Literal
-001090       434F46            Literal
+00109b       336412            Literal
+00109e       457074            Literal
 
 >>    END    Of    Pass    One 
      ******************************************************************** 
@@ -65,19 +70,19 @@
 
          NAME              VALUE               ABSOL/RELOC 
          ---------------------------------------------------------
-         output            4236                  relocatable
-         wrrec             4211                  relocatable
-         exit              4204                  relocatable
+         output            4250                  relocatable
+         wrrec             4225                  relocatable
+         exit              4218                  relocatable
          endfil            34                  relocatable
          cloop             6                  relocatable
-         wloop             4216                  relocatable
-         rloop             4182                  relocatable
+         wloop             4230                  relocatable
+         rloop             4196                  relocatable
          first             0                  relocatable
-         input             4210                  relocatable
+         input             4224                  relocatable
          fu                0                  relocatable
-         eof               67                  relocatable
-         retadr            70                  relocatable
-         length            73                  relocatable
-         rdrec             4172                  relocatable
-         buffer            76                  relocatable
+         eof               81                  relocatable
+         retadr            84                  relocatable
+         length            87                  relocatable
+         rdrec             4186                  relocatable
+         buffer            90                  relocatable
      ******************************************************************** 

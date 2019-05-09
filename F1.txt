@@ -16,9 +16,12 @@ ENDFIL   LDA     EOF
          LDA     #3
          STA     LENGTH
          LTORG
-         +LDA    =X'311412'
-         +LDA    =C'COF'
+         +LDA    =X'332412'
+         +LDA    =C'EpF'
          +JSUB   WRREC
+         LTORG
+         +LDA    =X'336412'
+         +LDA    =C'Ept'
          J       @RETADR
 EOF      BYTE    C'EOF'
 RETADR   RESW    1

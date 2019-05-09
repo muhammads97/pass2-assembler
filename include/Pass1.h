@@ -28,7 +28,6 @@ class Pass1
     private:
         vector<string>lines;
         vector<string> literals_pool;
-        vector<string> all_literals_found;
         vector<Instruction>instrucions;
         objectCodeMap obectCode;
         void handle_literals(Instruction ins);

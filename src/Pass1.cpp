@@ -405,10 +405,8 @@ int Pass1::get_locctr_address(Instruction* ins,int loc_ctr) {
         } else {
             instrucions.push_back(*ins);
             for(int i = 0 ; i < literals_data.size() ; i++) {
-                if(find(all_literals_found.begin(),all_literals_found.end(),literals_pool[i]) == all_literals_found.end()) {
-                    Instruction lit("*", literals_pool[i],  "");
+                   Instruction lit("*", literals_pool[i],  "");
                     lit.setStringOpCode(literals_data[i].second);
-                    all_literals_found.push_back(literals_pool[i]);
                     lit.setAddress(loc_ctr);
                     unordered_map<string,pair<int,string>>::iterator it ;
                     for(it = litTable.begin(); it != litTable.end(); it++ ) {
@@ -418,7 +416,7 @@ int Pass1::get_locctr_address(Instruction* ins,int loc_ctr) {
                     }
                     instrucions.push_back(lit);
                     loc_ctr += literals_data[i].first;
-                }
+
             }
             literals_data.clear();
             literals_pool.clear();
