@@ -1,0 +1,23 @@
+.23456789012345678901234567890123456
+.   
+         START   0
+k     word     3
+EOF      BYTE    C'EOF'
+BGN      LDA     =c'ahm'
+         ltorg
+         LDA     BETA
+h        byte    c'ahmed'
+         compr   t,x
+         MUL     #4
+         STA     ALPHA
+         LDA     GAMMA
+         MUL     #3
+         ADD     ALPHA
+         STA     ALPHA
+         J       *
+.
+BETA     WORD    2
+GAMMA    WORD    2
+M        WORD    4
+ALPHA    RESW    1
+         END    

@@ -1,0 +1,43 @@
+ Source Program Statements With Value of LC indicated 
+
+000000                                                             .23456789012345678901234567890123456
+000000                                                             .   
+000000                         start             0                 
+000000       k                 word              3                 
+000003       eof               byte              C'EOF'            
+000006       bgn               lda               =c'ahm'           
+000009                         ltorg                               
+000009       *                 =c'ahm'                             
+00000c                         lda               beta              
+00000f       h                 byte              c'ahmed'          
+000014                         compr             t,x               
+000016                         mul               #4                
+000019                         sta               alpha             
+00001c                         lda               gamma             
+00001f                         mul               #3                
+000022                         add               alpha             
+000025                         sta               alpha             
+000028                         j                 *                 
+00002b                                                             .
+00002b       beta              word              2                 
+00002e       gamma             word              2                 
+000031       m                 word              4                 
+000034       alpha             resw              1                 
+000037                         end                                 
+
+
+>>    END    Of    Pass    One 
+     ******************************************************************** 
+>>    s y m b o l     t a b l e   (values in decimal) 
+
+         NAME              VALUE               ABSOL/RELOC 
+         ---------------------------------------------------------
+         gamma             46                  relocatable
+         beta              43                  relocatable
+         m                 49                  relocatable
+         k                 0                  relocatable
+         h                 15                  relocatable
+         alpha             52                  relocatable
+         eof               3                  relocatable
+         bgn               6                  relocatable
+     ******************************************************************** 

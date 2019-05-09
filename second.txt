@@ -1,8 +1,11 @@
 .23456789012345678901234567890123456
 .   
          START   0
-BGN      LDA     BETA
-h        byte    c'ahmed'
+BGN      LDA     =c'ahm'
+         ltorg
+h        byte    c'EOF'
+         LDA     BETA
+  
          compr   t,x
          MUL     #4
          STA     ALPHA
