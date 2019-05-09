@@ -31,13 +31,13 @@ class Pass2
         unordered_map<string, Symbol> getSymTable();
         vector<Instruction> getOpTable();
         vector<Instruction> execute();
-        vector<pair<int ,std::string>> getLitTab();
-        void setLitTab(vector<pair<int ,std::string>> litTab);
+        unordered_map<string, pair<int ,string>> getLitTab();
+        void setLitTab(unordered_map<string, pair<int ,string>> litTab);
     protected:
 
     private:
         unordered_map<string, Symbol> symTab;
-        vector<pair<int ,std::string>> litTab;
+        unordered_map<string, pair<int ,string>> litTab;
         vector<Instruction> opTab;
         objectCodeMap opCodes;
         int base = 16777215;

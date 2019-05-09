@@ -16,19 +16,21 @@ class Pass1
         unordered_map<string, Symbol> symbols;
         vector<Instruction> getInstructions();
         vector<pair <int ,string> > literals_data;
-        vector<string> literals;
+        unordered_map<string,pair<int,string> > litTable; // literal table required for pass 2 :: key string -> hexavalue
+        // pair.first -> address pair.second -> the value between quotes as  EOF in   =C'EOF'
+        vector<string> ops_invalid_literals;
         bool valid = true;
         int pc = 0;
         void setIInvalidLiterals();
+        vector<int> ltorg;
     protected:
 
     private:
         vector<string>lines;
+        vector<string> literals_pool;
         vector<Instruction>instrucions;
         objectCodeMap obectCode;
-
         void handle_literals(Instruction ins);
-
         bool firstStart = true;
         ReadFile f;
         void readd(string path);

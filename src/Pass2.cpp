@@ -20,11 +20,12 @@ vector<Instruction> Pass2::getOpTable() {
     return opTab;
 }
 vector<Instruction> Pass2::execute() {
-    regex skipOperations("(\\+)?(START|ORG|BASE|NOBASE|LTORG|END|RESW|RESW|RESB|WORD|BYTE|EQU)", icase);
+    regex skipOperations("(\\+)?(START|EQU|ORG|BASE|NOBASE|LTORG|END|RESW|RESW|RESB|WORD|BYTE)", icase);
     bool started = false;
     int j = 0;
     while(j < opTab.size()) {
         bool err = false;
+        //cout << "                                                >>>>>>>" << opTab[j].toString() <<endl;
         if(!started) {
             if(opTab[j].getOperation() != string("start")) {
                 cout<<opTab[j].getOperation() << endl;
@@ -46,6 +47,10 @@ vector<Instruction> Pass2::execute() {
         }
         if(opTab[j].getOperation() == string("base")) {
             setBaseAddress(opTab[j].getOperand());
+            j++;
+            continue;
+        }
+        if(opTab[j].getLabel() == string("*")){
             j++;
             continue;
         }
@@ -135,10 +140,14 @@ vector<Instruction> Pass2::execute() {
                 disp = displacement(locctr, operandHex, base, e, b, p);
             } else if (operand[0] == '=') {
                 operandHex = getLiteralValue(operand);
+                //cout << hex << operandHex << endl;
                 if(operandHex == 16777215) {
                     opTab[j].setPass2ErrMsg("literal not found or address exceeded size");
                 }
-                disp = displacement(locctr, operandHex, base, e, b, p);
+                //disp = displacement(locctr, operandHex, base, e, b, p);
+                disp = operandHex;
+                i = true;
+                n = true;
             } else if (operand == string("*")) {
                 operandHex = opTab[j].getAddress();
                 disp = displacement(locctr, operandHex, base, e, b, p);
@@ -153,6 +162,7 @@ vector<Instruction> Pass2::execute() {
                 }
                 disp = displacement(locctr, operandHex, base, e, b, p);
             } else if (isExpression(operand)){
+                cout << "expression" <<endl;
                 if(operand[0] == '#'){
                     i = true;
                     n = false;
@@ -164,6 +174,7 @@ vector<Instruction> Pass2::execute() {
                     i = true;
                 }
                 operandHex = getExpressionValue(operand);
+                //cout << hex <<operandHex <<endl;
                 if(operandHex == 16777215 || operandHex < 0){
                     opTab[j].setPass2ErrMsg("invalid expression or negative value address");
                 }
@@ -263,11 +274,16 @@ int regValue(string reg){
         return 6;
     }
 }
-vector<pair<int,std::string>> Pass2::getLitTab() {
+unordered_map<string, pair<int ,string>> Pass2::getLitTab() {
     return litTab;
 }
-void Pass2::setLitTab(vector<pair<int,std::string>> litTab) {
+void Pass2::setLitTab(unordered_map<string, pair<int ,string>> litTab) {
     this->litTab = litTab;
+    unordered_map<string, pair<int ,string>>::const_iterator iter = litTab.begin();
+    /*while(iter != litTab.end()){
+        cout << "                                    >>>>>>"<<iter->first << "    " << iter->second.first << "     " << iter->second.second << endl;
+        iter++;
+    }*/
 }
 
 void Pass2::setBaseAddress(string operand) {
@@ -304,18 +320,32 @@ int Pass2::getLiteralValue(string operand) {
             string type = m.str(1);
             string s = m.str(2);
             if(type == string("x") || type == string("X")) {
-                for(pair<int, string> lit : litTab) {
+                unordered_map<string, pair<int, string>>::const_iterator iter = litTab.find(s);
+                if(iter == litTab.end()){
+                    return 16777215;
+                } else {
+                    return iter->second.first;
+                }
+                /*for(pair<int, string> lit : litTab) {
                     if(lit.second == s) {
                         return lit.first;
                     }
-                }
+                }*/
             } else if(type == string("c") || type == string("C")) {
                 string hex = hexa_format_of_literal(s);
-                for(pair<int, string> lit : litTab) {
+                transform(hex.begin(), hex.end(), hex.begin(), ::toupper);
+                unordered_map<string, pair<int, string>>::const_iterator iter = litTab.find(hex);
+                if(iter == litTab.end()){
+                    cout << "ml2aaaash" << endl;
+                    return 16777215;
+                } else {
+                    return iter->second.first;
+                }
+                /*for(pair<int, string> lit : litTab) {
                     if(lit.second == hex) {
                         return lit.first;
                     }
-                }
+                }*/
             }
         }
     }

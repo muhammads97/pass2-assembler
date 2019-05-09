@@ -20,7 +20,7 @@ int main()
     Pass1 builder(file_name);
     vector<Instruction> v = builder.getInstructions();
     Pass2 pass2;
-    pass2.setLitTab(builder.literals_data);
+    pass2.setLitTab(builder.litTable);
     pass2.setOpTable(v);
     pass2.setSymTable(builder.symbols);
     v = pass2.execute();

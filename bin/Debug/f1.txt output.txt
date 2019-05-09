@@ -1,0 +1,74 @@
+ Source Program Statements With Value of LC indicated 
+
+000000                                                             .23456789012345678
+000000       FU                START             0                 
+000000       first             STL               RETADR            
+000003                         LDB               #LENGTH           
+000006                         BASE              LENGTH            
+000006       CLOOP             +JSUB             RDREC             
+00000a                         LDA               LENGTH            
+00000d                         COMP              #0                
+000010                         JEQ               ENDFIL            
+000013                         +JSUB             WRREC             
+000017                         J                 CLOOP             
+00001a       ENDFIL            +LDA              =C'EOF'           
+00001e                         STA               BUFFER            
+000021       XXX               EQU               ENDFIL*CLOOP      
+not valid expression
+000021                         STA               LENGTH            
+000024                         +JSUB             WRREC             
+000028                         J                 @RETADR           
+00002b       RETADR            RESW              1                 
+00002e       LENGTH            RESW              1                 
+000031       BUFFER            RESB              4096              
+001031                                                             .
+001031       RDREC             CLEAR             X                 
+001033                         CLEAR             A                 
+001035                         CLEAR             S                 
+001037                         +LDA              #4096             
+00103b       RLOOP             TD                INPUT             
+00103e                         JEQ               RLOOP             
+001041                         RD                INPUT             
+001044                         COMPR             A,S               
+001046                         JEQ               EXIT              
+001049                         STCH              BUFFER,X          
+00104c                         TIXR              T                 
+00104e                         JLT               RLOOP             
+001051       EXIT              STX               LENGTH            
+001054                         RSUB                                
+001057       INPUT             BYTE              X'F1'             
+001058       WRREC             CLEAR             X                 
+00105a                         LDT               LENGTH            
+00105d       WLOOP             TD                OUTPUT            
+001060                         JEQ               WLOOP             
+001063                         LDCH              BUFFER,X          
+001066                         WD                OUTPUT            
+001069                         TIXR              T                 
+00106b                         JLT               WLOOP             
+00106e                         RSUB                                
+001071       OUTPUT            BYTE              X'05'             
+001072                         END               FIRST             
+
+001072       454F46            Literal
+
+>>    END    Of    Pass    One 
+     ******************************************************************** 
+>>    s y m b o l     t a b l e   (values in decimal) 
+
+         NAME              VALUE               ABSOL/RELOC 
+         ---------------------------------------------------------
+         output            4209                  relocatable
+         wrrec             4184                  relocatable
+         endfil            26                  relocatable
+         cloop             6                  relocatable
+         wloop             4189                  relocatable
+         rloop             4155                  relocatable
+         first             0                  relocatable
+         input             4183                  relocatable
+         fu                0                  relocatable
+         retadr            43                  relocatable
+         length            46                  relocatable
+         rdrec             4145                  relocatable
+         buffer            49                  relocatable
+         exit              4177                  relocatable
+     ******************************************************************** 

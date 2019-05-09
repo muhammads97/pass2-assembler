@@ -9,7 +9,8 @@ CLOOP    +JSUB   RDREC
          JEQ     ENDFIL
          +JSUB   WRREC
          J       CLOOP
-ENDFIL   LDA     EOF
+ENDFIL   LDA     =C'EOF'
+         LTORG
          STA     BUFFER
          LDA     #3
          STA     LENGTH

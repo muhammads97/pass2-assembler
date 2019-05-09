@@ -1,5 +1,6 @@
 #include "Instruction.h"
 
+
 Instruction::Instruction(std::string l, std::string op, std::string oper)
 {
     transform(l.begin(), l.end(), l.begin(), ::tolower);
@@ -13,75 +14,76 @@ Instruction::Instruction(std::string l, std::string op, std::string oper)
     operation = op;
     operand = oper;
 }
-int Instruction:: getAddress(){
+int Instruction:: getAddress() {
     return address;
 }
-void Instruction:: setAddress(int add){
+void Instruction:: setAddress(int add) {
     address = add;
 }
-bool Instruction::isWrong(){
+bool Instruction::isWrong() {
     return errorFlag;
 }
-void Instruction::setErrorFlag(bool f){
+void Instruction::setErrorFlag(bool f) {
     errorFlag = f;
 }
-std::string Instruction::getErrorMsg(){
+std::string Instruction::getErrorMsg() {
     return errorMsg;
 }
-void Instruction::setErrorMsg(std::string error){
+void Instruction::setErrorMsg(std::string error) {
     errorMsg = error;
 }
-std::string Instruction::getLabel(){
+std::string Instruction::getLabel() {
     return label;
 }
-std::string Instruction::getOperation(){
+std::string Instruction::getOperation() {
     return operation;
 }
-std::string Instruction::getOperand(){
+std::string Instruction::getOperand() {
     return operand;
 }
-int Instruction::getFormat(){
+int Instruction::getFormat() {
     return format;
 }
-void Instruction::setFormat(int f){
+void Instruction::setFormat(int f) {
     format = f;
 }
-std::string Instruction::getComment(){
+std::string Instruction::getComment() {
     return comment;
 }
-bool Instruction::isComment(){
+bool Instruction::isComment() {
     return commetFlag;
 }
-void Instruction::setCommentflag(bool f){
+void Instruction::setCommentflag(bool f) {
     commetFlag = f;
 }
-void Instruction::setCommentMsg(std::string str){
+void Instruction::setCommentMsg(std::string str) {
     comment = str;
 }
-void Instruction::setRelocatable(bool f){
+void Instruction::setRelocatable(bool f) {
     relocatable = true;
 }
-bool Instruction::getRelocatable(){
+bool Instruction::getRelocatable() {
     return relocatable;
 }
-void Instruction::setOpCode(int opCode){
+void Instruction::setOpCode(int opCode) {
     this->opCode = opCode;
     hasOpCode = true;
 }
-bool Instruction::ishasOpCode(){
+bool Instruction::ishasOpCode() {
     return hasOpCode;
 }
-int Instruction::getOpCode(){
+int Instruction::getOpCode() {
     return opCode;
 }
 
-bool Instruction::isPass2Err(){
+bool Instruction::isPass2Err() {
     return pass2Error;
 }
-void Instruction::setPass2ErrMsg(std::string msg){
+void Instruction::setPass2ErrMsg(std::string msg) {
     this->pass2Error = true;
     this->pass2ErrMsg = msg;
 }
+
 void Instruction::setLongObjectCode(string obCode){
     this->longObjectCode = obCode;
     this->hasOpCode = true;
@@ -106,9 +108,14 @@ string Instruction::toString(){
     stringstream ss;
     ss << hex << address;
     return label + "    " + operation + "    " + operand + "    " + comment + "    " + ss.str();
-}
 
-Instruction::~Instruction()
-{
+}
+void Instruction::setStringOpCode(string string_opCode) {
+    this->string_opCode = string_opCode;
+}
+string Instruction::getStringOpCode() {
+    return string_opCode;
+}
+Instruction::~Instruction() {
     //dtor
 }

@@ -15,6 +15,7 @@ class Instruction
         std::string pass2ErrMsg;
         //get from Op code
         int opCode;
+        string string_opCode;
         int format;
         bool hasOpCode = false;
         //the instrucion component
@@ -26,6 +27,8 @@ class Instruction
         string toString();
         void setOpCode(int opCode);
         int getOpCode();
+        void setStringOpCode(string string_opCode);
+        string getStringOpCode();
         Instruction(std::string l, std::string op, std::string oper);
         virtual ~Instruction();
         int getAddress();
