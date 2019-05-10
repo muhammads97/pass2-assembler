@@ -1,0 +1,57 @@
+ Source Program Statements With Value of LC indicated 
+
+000000                                                             .23456789012345678901234567890123456
+000000                                                             .   
+000000                         start             0                 
+000000       bgn               lda               =c'ahm'           
+000003                         ltorg                               
+000003       *                 =c'ahm'                             
+000006       h                 byte              c'EOF'            
+000009                         lda               beta              
+00000c                                                             
+didn't match any valid instruction
+00000c                         compr             t,x               
+00000e                         mul               #4                
+000011                         sta               alpha             
+000014                         lda               gamma             
+000017                         mul               #3                
+00001a                         add               alpha             
+00001d                         sta               alpha             
+000020                         j                 *                 
+000023                                                             .
+000023       beta              word              2                 
+000026       gamma             word              2                 
+000029       m                 word              4                 
+00002c       alpha             resw              1                 
+00002f                         end                                 
+
+
+>>    END    Of    Pass    One 
+     ******************************************************************** 
+>>    s y m b o l     t a b l e   (values in decimal) 
+
+         NAME              VALUE               ABSOL/RELOC 
+         ---------------------------------------------------------
+         alpha             44                  relocatable
+         m                 41                  relocatable
+         bgn               0                  relocatable
+         h                 6                  relocatable
+         beta              35                  relocatable
+         gamma             38                  relocatable
+     ******************************************************************** 
+printtttttttttttttttttttttttt
+030003  KK
+454f46  KK
+032017  KK
+A051  KK
+210004  KK
+0F2018  KK
+03200F  KK
+210003  KK
+1B200F  KK
+0F200C  KK
+3C2FFD  KK
+3C2FFD  KK
+000002  KK
+000002  KK
+000004  KK

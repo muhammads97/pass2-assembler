@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # depslib dependency file v1.0
 1557394682 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\main.cpp
 	<iostream>
@@ -267,3 +268,400 @@
 	"Instruction.h"
 	<regex>
 
+=======
+# depslib dependency file v1.0
+1557394682 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\main.cpp
+	<iostream>
+	"OpCodeParameters.h"
+	"AddressTranslation.h"
+	"Pass1.h"
+	"WriteFile.h"
+	"Pass2.h"
+	<regex>
+
+1557326103 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\opcodeparameters.h
+	<string>
+
+1557139130 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\opcodes.h
+	<unordered_map>
+	<iostream>
+	<algorithm>
+	"Ob.h"
+
+1556188950 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\ob.h
+	<string>
+	<string.h>
+
+1556188950 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\ob.cpp
+	"Ob.h"
+	"objectCodeMap.h"
+	<iostream>
+
+1556188950 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\objectcodemap.h
+	<unordered_map>
+	"Ob.h"
+
+1557139669 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\opcodes.cpp
+	"OpCodes.h"
+
+1557326325 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\opcodeparameters.cpp
+	"OpCodeParameters.h"
+
+1557327702 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\objectcodemap.cpp
+	"objectCodeMap.h"
+	"Ob.h"
+	<unordered_map>
+	<iostream>
+	<algorithm>
+
+1557183598 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\instrucion.cpp
+	"Instrucion.h"
+
+1557183585 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\instrucion.h
+	<bits/stdc++.h>
+
+1557317157 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\addresstranslation.cpp
+	"AddressTranslation.h"
+
+1557320288 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\addresstranslation.h
+	<string>
+
+1556188950 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\symbol.cpp
+	"Symbol.h"
+
+1556188950 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\symbol.h
+
+1557396043 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\pass2.cpp
+	"Pass2.h"
+
+1557394768 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\pass2.h
+	<unordered_map>
+	<string>
+	<regex>
+	"Symbol.h"
+	"Instruction.h"
+	"objectCodeMap.h"
+	"OpCodeParameters.h"
+	"AddressTranslation.h"
+	<vector>
+	<iomanip>
+
+1557390875 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\pass1.h
+	<bits/stdc++.h>
+	"Instruction.h"
+	<objectCodeMap.h>
+	<ReadFile.h>
+	"Symbol.h"
+
+1557390875 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\instruction.h
+	<bits/stdc++.h>
+	<iomanip>
+
+1556281542 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\readfile.h
+	<bits/stdc++.h>
+
+1557232921 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\writefile.h
+	<algorithm>
+	<Symbol.h>
+	<Instruction.h>
+	<stdint.h>
+
+1557390876 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\instruction.cpp
+	"Instruction.h"
+
+1557355689 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\parser.cpp
+	"parser.h"
+	<regex>
+	"objectCodeMap.h"
+	<bits/stdc++.h>
+
+1557233114 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\parser.h
+	<string>
+	<iostream>
+	<regex>
+	"Instruction.h"
+
+1557390876 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\pass1.cpp
+	"Pass1.h"
+	"parser.h"
+	"Instruction.h"
+	<regex>
+
+1557233661 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\print.cpp
+	"print.h"
+
+1557231710 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\print.h
+	"Instruction.h"
+	"Record.h"
+
+1557228662 f:\csed21\year2\2nd_semester\systems programming\project\pass2\include\record.h
+	<bits/stdc++.h>
+
+1556281544 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\readfile.cpp
+	"ReadFile.h"
+	<bits/stdc++.h>
+	<iostream>
+
+1557227150 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\record.cpp
+	"Record.h"
+
+1557233562 source:f:\csed21\year2\2nd_semester\systems programming\project\pass2\src\writefile.cpp
+	"WriteFile.h"
+	<unordered_map>
+	<iomanip>
+	<stdint.h>
+
+1557354864 source:c:\users\shiko\git\assemblypass2\main.cpp
+	<iostream>
+	"OpCodeParameters.h"
+	"AddressTranslation.h"
+	"Pass1.h"
+	"WriteFile.h"
+	"Pass2.h"
+	<regex>
+
+1557354864 c:\users\shiko\git\assemblypass2\include\opcodeparameters.h
+	<string>
+
+1557354864 c:\users\shiko\git\assemblypass2\include\addresstranslation.h
+	<string>
+
+1557366541 c:\users\shiko\git\assemblypass2\include\pass1.h
+	<bits/stdc++.h>
+	"Instruction.h"
+	<objectCodeMap.h>
+	<ReadFile.h>
+	"Symbol.h"
+
+1557354867 c:\users\shiko\git\assemblypass2\include\instruction.h
+	<bits/stdc++.h>
+	<iomanip>
+
+1557222592 c:\users\shiko\git\assemblypass2\include\objectcodemap.h
+	<unordered_map>
+	"Ob.h"
+
+1557222592 c:\users\shiko\git\assemblypass2\include\ob.h
+	<string>
+	<string.h>
+
+1557322638 c:\users\shiko\git\assemblypass2\include\readfile.h
+	<bits/stdc++.h>
+
+1557222592 c:\users\shiko\git\assemblypass2\include\symbol.h
+
+1557322638 c:\users\shiko\git\assemblypass2\include\writefile.h
+	<algorithm>
+	<Symbol.h>
+	<Instruction.h>
+	<stdint.h>
+
+1557354864 source:c:\users\shiko\git\assemblypass2\src\addresstranslation.cpp
+	"AddressTranslation.h"
+
+1557355395 source:c:\users\shiko\git\assemblypass2\src\instruction.cpp
+	"Instruction.h"
+
+1557222593 source:c:\users\shiko\git\assemblypass2\src\ob.cpp
+	"Ob.h"
+	"objectCodeMap.h"
+	<iostream>
+
+1557222593 source:c:\users\shiko\git\assemblypass2\src\objectcodemap.cpp
+	"objectCodeMap.h"
+	"Ob.h"
+	<unordered_map>
+	<iostream>
+	<algorithm>
+
+1557354864 source:c:\users\shiko\git\assemblypass2\src\opcodeparameters.cpp
+	"OpCodeParameters.h"
+
+1557356304 source:c:\users\shiko\git\assemblypass2\src\parser.cpp
+	"parser.h"
+	<regex>
+	"objectCodeMap.h"
+	<bits/stdc++.h>
+
+1557322638 c:\users\shiko\git\assemblypass2\include\parser.h
+	<string>
+	<iostream>
+	<regex>
+	"Instruction.h"
+
+1557322638 source:c:\users\shiko\git\assemblypass2\src\print.cpp
+	"print.h"
+
+1557322638 c:\users\shiko\git\assemblypass2\include\print.h
+	"Instruction.h"
+	"Record.h"
+
+1557322638 c:\users\shiko\git\assemblypass2\include\record.h
+	<bits/stdc++.h>
+
+1557322638 source:c:\users\shiko\git\assemblypass2\src\readfile.cpp
+	"ReadFile.h"
+	<bits/stdc++.h>
+	<iostream>
+
+1557322638 source:c:\users\shiko\git\assemblypass2\src\record.cpp
+	"Record.h"
+
+1557222593 source:c:\users\shiko\git\assemblypass2\src\symbol.cpp
+	"Symbol.h"
+
+1557322638 source:c:\users\shiko\git\assemblypass2\src\writefile.cpp
+	"WriteFile.h"
+	<unordered_map>
+	<iomanip>
+	<stdint.h>
+
+1557355897 source:c:\users\shiko\git\assemblypass2\src\pass2.cpp
+	"Pass2.h"
+
+1557354864 c:\users\shiko\git\assemblypass2\include\pass2.h
+	<unordered_map>
+	<string>
+	<regex>
+	"Symbol.h"
+	"Instruction.h"
+	"objectCodeMap.h"
+	"OpCodeParameters.h"
+	"AddressTranslation.h"
+	<vector>
+	<iomanip>
+
+1557367242 source:c:\users\shiko\git\assemblypass2\src\pass1.cpp
+	"Pass1.h"
+	"parser.h"
+	"Instruction.h"
+	<regex>
+
+1557351724 source:e:\mydesk\projects\salah\pass2-assembler\src\addresstranslation.cpp
+	"AddressTranslation.h"
+
+1557351724 e:\mydesk\projects\salah\pass2-assembler\include\addresstranslation.h
+	<string>
+
+1557406764 source:e:\mydesk\projects\salah\pass2-assembler\src\instruction.cpp
+	"Instruction.h"
+
+1557406763 e:\mydesk\projects\salah\pass2-assembler\include\instruction.h
+	<bits/stdc++.h>
+	<iomanip>
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\ob.cpp
+	"Ob.h"
+	"objectCodeMap.h"
+	<iostream>
+
+1557264786 e:\mydesk\projects\salah\pass2-assembler\include\ob.h
+	<string>
+	<string.h>
+
+1557264787 e:\mydesk\projects\salah\pass2-assembler\include\objectcodemap.h
+	<unordered_map>
+	"Ob.h"
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\objectcodemap.cpp
+	"objectCodeMap.h"
+	"Ob.h"
+	<unordered_map>
+	<iostream>
+	<algorithm>
+
+1557351724 source:e:\mydesk\projects\salah\pass2-assembler\src\opcodeparameters.cpp
+	"OpCodeParameters.h"
+
+1557351724 e:\mydesk\projects\salah\pass2-assembler\include\opcodeparameters.h
+	<string>
+
+1557356095 source:e:\mydesk\projects\salah\pass2-assembler\src\parser.cpp
+	"parser.h"
+	<regex>
+	"objectCodeMap.h"
+	<bits/stdc++.h>
+
+1557264787 e:\mydesk\projects\salah\pass2-assembler\include\parser.h
+	<string>
+	<iostream>
+	<regex>
+	"Instruction.h"
+
+1557437951 source:e:\mydesk\projects\salah\pass2-assembler\src\print.cpp
+	"print.h"
+
+1557264787 e:\mydesk\projects\salah\pass2-assembler\include\print.h
+	"Instruction.h"
+	"Record.h"
+
+1557407625 e:\mydesk\projects\salah\pass2-assembler\include\record.h
+	<bits/stdc++.h>
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\readfile.cpp
+	"ReadFile.h"
+	<bits/stdc++.h>
+	<iostream>
+
+1557264786 e:\mydesk\projects\salah\pass2-assembler\include\readfile.h
+	<bits/stdc++.h>
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\record.cpp
+	"Record.h"
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\symbol.cpp
+	"Symbol.h"
+
+1557264786 e:\mydesk\projects\salah\pass2-assembler\include\symbol.h
+
+1557264787 source:e:\mydesk\projects\salah\pass2-assembler\src\writefile.cpp
+	"WriteFile.h"
+	<unordered_map>
+	<iomanip>
+	<stdint.h>
+
+1557264786 e:\mydesk\projects\salah\pass2-assembler\include\writefile.h
+	<algorithm>
+	<Symbol.h>
+	<Instruction.h>
+	<stdint.h>
+
+1557407345 source:e:\mydesk\projects\salah\pass2-assembler\main.cpp
+	<iostream>
+	"OpCodeParameters.h"
+	"AddressTranslation.h"
+	"Pass1.h"
+	"WriteFile.h"
+	"Pass2.h"
+	<regex>
+	"print.h"
+
+1557406764 e:\mydesk\projects\salah\pass2-assembler\include\pass1.h
+	<bits/stdc++.h>
+	"Instruction.h"
+	<objectCodeMap.h>
+	<ReadFile.h>
+	"Symbol.h"
+
+1557406764 e:\mydesk\projects\salah\pass2-assembler\include\pass2.h
+	<unordered_map>
+	<string>
+	<regex>
+	"Symbol.h"
+	"Instruction.h"
+	"objectCodeMap.h"
+	"OpCodeParameters.h"
+	"AddressTranslation.h"
+	<vector>
+	<iomanip>
+
+1557406765 source:e:\mydesk\projects\salah\pass2-assembler\src\pass1.cpp
+	"Pass1.h"
+	"parser.h"
+	"Instruction.h"
+	<regex>
+
+1557406765 source:e:\mydesk\projects\salah\pass2-assembler\src\pass2.cpp
+	"Pass2.h"
+
+>>>>>>> 26977d72d30503178142a001a461c72f23a8523a

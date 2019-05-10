@@ -14,55 +14,82 @@ void printObjectCode(vector<Instruction>ins){
     vector<Record>records;
     Record r;
     bool start = true;
+    cout<<"printtttttttttttttttttttttttt\n";
     for(int i = 0; i < ins.size(); i++){
+
         if(!ins[i].ishasOpCode())
             continue;
-        if(start){
-            r.startAdd = ins[i].getAddress();
-            start = false;
+        //cout<<"d5l\n";
+        //if(start){
+          //  r.startAdd = ins[i].getAddress();
+           // cout<<ins[i].getAddress()<<"     start address" ;
+           // start = false;
+        //}
+        string objectCode;
+        if(!ins[i].isByte){
+            objectCode = HexFromDecimal(ins[i].getOpCode());
+            if(ins[i].getFormat() == 3){
+                while(objectCode.size() < 6){
+                    objectCode = '0' + objectCode;
+                }
+            }
+            if(ins[i].getFormat() == 4){
+                while(objectCode.size() < 8){
+                    objectCode = '0' + objectCode;
+                }
+            }
+        }else{
+            objectCode = ins[i].getLongObjectCode();
         }
-        string objectCode = HexFromDecimal(ins[i].getOpCode());
+        cout<<objectCode<<"  KK\n";
         if(r.objRec.size() + objectCode.size() <= 62){
+            if(r.objRec.size() == 0){
+                r.startAdd = ins[i].getAddress();
+
+            }
             r.objRec += objectCode;
         }else{
             r.obSize = HexFromDecimal(r.objRec.size()/2);
             records.push_back(r);
             startSize += r.objRec.size()/2;
+
             r.objRec = "";
             r.obSize = "";
             r.startAdd = ins[i].getAddress();
             i--;
         }
-        if(i + 1 == ins.size()){
+    }
+    if(r.objRec.size() != 0){
             r.obSize = HexFromDecimal(r.objRec.size()/2);
-            records.push_back(r);
             startSize += r.objRec.size()/2;
-            r.objRec = "";
-            r.obSize = "";
-            r.startAdd = ins[i].getAddress();
-        }
+            records.push_back(r);
     }
     // print
+
     string file_name = "objectcode.txt";
     char const * fname = file_name.c_str ();
     freopen(fname,"w",stdout);
     //header
     cout<<"H"<<name<<"^";
-    printf("%.6x  ",startLoc);
+    printf("%.6x",startLoc);
     cout<<"^";
-    printf("%.6x  ",startSize);
+    printf("%.6x",startSize);
     cout<<"\n";
      //record
+
     for(Record i : records){
         cout<<"T";
-        int x = stoi(i.startAdd, 0, 16);
-        printf("%.6x  ",x);
+
+        printf("%.6x",i.startAdd);
+        //int x = stoi(i.startAdd, 0, 16);
+        //printf("%.6x  ",x);
         cout<<"^"<<i.obSize<<"^"<<i.objRec<<"\n";
     }
 
     //end
     cout<<"E";
-    printf("%.6x  ",startLoc);
+    printf("%.6x",startLoc);
+
 
 
 }

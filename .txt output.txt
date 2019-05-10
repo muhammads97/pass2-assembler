@@ -1,0 +1,11 @@
+ Source Program Statements With Value of LC indicated 
+
+
+
+>>    END    Of    Pass    One 
+     ******************************************************************** 
+>>    s y m b o l     t a b l e   (values in decimal) 
+
+         NAME              VALUE               ABSOL/RELOC 
+         ---------------------------------------------------------
+     ******************************************************************** 

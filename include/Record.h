@@ -6,7 +6,8 @@ class Record
 {
     public:
         Record();
-        string startAdd = "",obSize = "",objRec = "";
+        int startAdd;
+        string obSize = "",objRec = "";
         virtual ~Record();
 
     protected:
