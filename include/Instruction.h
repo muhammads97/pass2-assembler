@@ -42,6 +42,7 @@ class Instruction
         std::string getLabel();
         std::string getOperation();
         std::string getOperand();
+        std::string getPass2ErrMsg();
         int getFormat();
         void setFormat(int f);
         std::string getComment();

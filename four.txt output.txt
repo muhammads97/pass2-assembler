@@ -1,0 +1,42 @@
+ Source Program Statements With Value of LC indicated 
+
+000000                                                             .2345678901234567890123456789
+000000                                                             .  SET elements of a 100-word array to 0
+000000       prog              start             0000              
+000000       bgn               lda               zero              
+000003                         sta               index             
+000006       loop              ldx               index             
+000009                         lda               zero              
+00000c                         sta               alpha,x           
+00000f                         lda               index             
+000012                         add               three             
+000015                         sta               index             
+000018                         comp              k300              
+00001b                         jlt               loop              
+00001e                         j                 *                 
+000021                                                             .
+000021       index             resw              1                 
+000024                                                             .
+000024       alpha             resw              100               
+000150                                                             .
+000150       zero              word              0                 
+000153       k300              word              300               
+000156       three             word              3                 
+000159                         end                                 
+
+
+>>    END    Of    Pass    One 
+     ******************************************************************** 
+>>    s y m b o l     t a b l e   (values in decimal) 
+
+         NAME              VALUE               ABSOL/RELOC 
+         ---------------------------------------------------------
+         k300              339                  relocatable
+         zero              336                  relocatable
+         three             342                  relocatable
+         alpha             36                  relocatable
+         prog              0                  relocatable
+         index             33                  relocatable
+         bgn               0                  relocatable
+         loop              6                  relocatable
+     ******************************************************************** 

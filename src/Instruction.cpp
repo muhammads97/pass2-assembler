@@ -32,6 +32,11 @@ void Instruction::setErrorFlag(bool f) {
 std::string Instruction::getErrorMsg() {
     return errorMsg;
 }
+
+string Instruction::getPass2ErrMsg(){
+    return pass2ErrMsg;
+}
+
 void Instruction::setErrorMsg(std::string error) {
     errorMsg = error;
 }

@@ -6,6 +6,10 @@
 #include "Pass2.h"
 #include <regex>
 #include "print.h"
+#include "writepass.h"
+
+
+
 using namespace std;
 
 int main()
@@ -26,6 +30,7 @@ int main()
     pass2.setSymTable(builder.symbols);
     v = pass2.execute();
     WriteFile p(v,builder.literals_data,builder.pc,builder.symbols,file_name);
+    writepass sp(v,file_name);
     printObjectCode(v);
     return 0;
 }

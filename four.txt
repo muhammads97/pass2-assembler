@@ -1,0 +1,23 @@
+.2345678901234567890123456789
+.  SET elements of a 100-word array to 0
+PROG     START   0000
+BGN      LDA     ZERO
+         STA     INDEX
+LOOP     LDX     INDEX
+         LDA     ZERO
+         STA     ALPHA,X
+         LDA     INDEX
+         ADD     THREE
+         STA     INDEX
+         COMP    K300
+         JLT     LOOP
+         J       *
+.
+INDEX    RESW    1
+.
+ALPHA    RESW    100
+.
+ZERO     WORD    0
+K300     WORD    300
+THREE    WORD    3
+         END     BGN

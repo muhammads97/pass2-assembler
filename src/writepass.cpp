@@ -66,18 +66,18 @@ writepass::writepass(std::vector<Instruction> ins, std::string file_name)
         }
         cout<<ins[i].getComment()<<"\n";
 
-        if(ins[i].isWrong())
+        if(ins[i].isPass2Err())
         {
             flag = true;
-            std::cout<<ins[i].getErrorMsg()<<"\n";
+            cout<<ins[i].getPass2ErrMsg()<<"\n";
         }
 
       }
 
       if (flag){
-        cout << "\n>>    s u c c e s s f u l    a s s e m b l y\n";
+        cout << "\n>>    u n s u c c e s s f u l    a s s e m b l y\n";
       } else {
-          cout << "\n>>    u n s u c c e s s f u l    a s s e m b l y\n";
+          cout << "\n>>    s u c c e s s f u l    a s s e m b l y\n";
       }
 }
 
