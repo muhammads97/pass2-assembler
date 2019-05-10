@@ -14,7 +14,6 @@ void printObjectCode(vector<Instruction>ins){
     vector<Record>records;
     Record r;
     bool start = true;
-    cout<<"printtttttttttttttttttttttttt\n";
     for(int i = 0; i < ins.size(); i++){
 
         if(!ins[i].ishasOpCode())
@@ -41,7 +40,6 @@ void printObjectCode(vector<Instruction>ins){
         }else{
             objectCode = ins[i].getLongObjectCode();
         }
-        cout<<objectCode<<"  KK\n";
         if(r.objRec.size() + objectCode.size() <= 62){
             if(r.objRec.size() == 0){
                 r.startAdd = ins[i].getAddress();
