@@ -13,7 +13,7 @@
 000017                         j                 cloop             
 00001a       endfil            lda               =C'EOF'           
 00001d                         ltorg                               
-00001d       *                 =c'eof'                             
+00001d       *                 =C'EOF'                             
 000020                         sta               buffer            
 000023                         lda               #3                
 000026                         sta               length            

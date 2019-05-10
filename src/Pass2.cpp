@@ -1,5 +1,9 @@
 #include "Pass2.h"
 
+int getHex(string hexstr) {
+    return (int)strtol(hexstr.c_str(), 0, 16);
+}
+
 Pass2::Pass2() {
     //ctor
 }
@@ -51,6 +55,9 @@ vector<Instruction> Pass2::execute() {
             continue;
         }
         if(opTab[j].getLabel() == string("*")){
+            int objectCode = getLiteralValue(opTab[j].getOperation());
+            opTab[j].setOpCode(getHex(opTab[j].getStringOpCode()));
+            cout << opTab[j].toString() <<endl;
             j++;
             continue;
         }

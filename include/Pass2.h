@@ -10,6 +10,7 @@
 #include "AddressTranslation.h"
 #include <vector>
 #include <iomanip>
+#include <stdlib.h>
 using namespace std;
 using namespace std::regex_constants;
 

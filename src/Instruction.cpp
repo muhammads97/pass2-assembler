@@ -4,11 +4,14 @@
 Instruction::Instruction(std::string l, std::string op, std::string oper)
 {
     transform(l.begin(), l.end(), l.begin(), ::tolower);
-    transform(op.begin(), op.end(), op.begin(), ::tolower);
+    //transform(op.begin(), op.end(), op.begin(), ::tolower);
     regex r("=([Xx]|[cC])\'([a-zA-Z0-9]+)\'");
     regex r2("([Cc]|[Xx])\'(.+)\'");
     if(!regex_match(oper, r) && !regex_match(oper, r2)){
         transform(oper.begin(), oper.end(), oper.begin(), ::tolower);
+    }
+    if(!regex_match(op, r) && !regex_match(op, r2)){
+        transform(op.begin(), op.end(), op.begin(), ::tolower);
     }
     label = l;
     operation = op;
