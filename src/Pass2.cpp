@@ -89,15 +89,19 @@ vector<Instruction> Pass2::execute() {
                     int objectCode = stoi(operand);
                     if(objectCode > 4095){
                         opTab[j].setPass2ErrMsg("operand overflow");
+                        opTab[j].setOpCode(0);
+                continue;
                     } else {
                         opTab[j].setOpCode(objectCode);
                     }
-                    cout << opTab[j].toString() <<endl;
+                    //cout << opTab[j].toString() <<endl;
                     j++;
                     continue;
                 } catch(invalid_argument arg){
                     opTab[j].setPass2ErrMsg("illegal operand");
-                    cout << opTab[j].toString() <<endl;
+                    opTab[j].setOpCode(0);
+                //continue;
+                    //cout << opTab[j].toString() <<endl;
                     j++;
                     continue;
                 }
@@ -115,6 +119,8 @@ vector<Instruction> Pass2::execute() {
                     operandHex = stoi(operand);
                     if((operandHex < -2048 || operandHex > 4095) && !e){
                         opTab[j].setPass2ErrMsg("address exceeds size try to use extended format");
+                        opTab[j].setOpCode(0);
+                continue;
                     } else if (operandHex < 0){
                         if(e){
                             operandHex = twoscomp(operandHex, 20);
@@ -128,6 +134,8 @@ vector<Instruction> Pass2::execute() {
                     unordered_map<string, Symbol>::const_iterator iter = symTab.find(operand);
                     if(iter == symTab.end()) {
                         opTab[j].setPass2ErrMsg("using undefined symbol");
+                        opTab[j].setOpCode(0);
+                continue;
                     } else {
                         operandHex = iter->second.address;
                         disp = displacement(locctr, operandHex, base, e, b, p);
@@ -135,6 +143,8 @@ vector<Instruction> Pass2::execute() {
                 }
                 if(operandHex == 16777215) {
                     opTab[j].setPass2ErrMsg("symbol not found or address exceeded size");
+                    opTab[j].setOpCode(0);
+                continue;
                 }
                 //disp = displacement(locctr, operandHex, base, e, b, p);
             } else if (operand[0] == '@') {
@@ -143,6 +153,8 @@ vector<Instruction> Pass2::execute() {
                 operandHex = getNumericOperand(operand);
                 if(operandHex == 16777215) {
                     opTab[j].setPass2ErrMsg("symbol not found or address exceeded size");
+                    opTab[j].setOpCode(0);
+                continue;
                 }
                 disp = displacement(locctr, operandHex, base, e, b, p);
             } else if (operand[0] == '=') {
@@ -150,6 +162,8 @@ vector<Instruction> Pass2::execute() {
                 //cout << hex << operandHex << endl;
                 if(operandHex == 16777215) {
                     opTab[j].setPass2ErrMsg("literal not found or address exceeded size");
+                    opTab[j].setOpCode(0);
+                continue;
                 }
                 //disp = displacement(locctr, operandHex, base, e, b, p);
                 disp = operandHex;
@@ -166,10 +180,12 @@ vector<Instruction> Pass2::execute() {
                 operandHex = getNumericOperand(operand);
                 if(operandHex == 16777215) {
                     opTab[j].setPass2ErrMsg("symbol not found or address exceeded size");
+                    opTab[j].setOpCode(0);
+                continue;
                 }
                 disp = displacement(locctr, operandHex, base, e, b, p);
             } else if (isExpression(operand)){
-                cout << "expression" <<endl;
+                //cout << "expression" <<endl;
                 if(operand[0] == '#'){
                     i = true;
                     n = false;
@@ -184,6 +200,8 @@ vector<Instruction> Pass2::execute() {
                 //cout << hex <<operandHex <<endl;
                 if(operandHex == 16777215 || operandHex < 0){
                     opTab[j].setPass2ErrMsg("invalid expression or negative value address");
+                    opTab[j].setOpCode(0);
+                continue;
                 }
                 disp = displacement(locctr, operandHex, base, e, b, p);
             } else {
@@ -208,6 +226,8 @@ vector<Instruction> Pass2::execute() {
                     operandHex = getNumericOperand(operand);
                     if(operandHex == 16777215) {
                         opTab[j].setPass2ErrMsg("symbol not found or address exceeded size");
+                        opTab[j].setOpCode(0);
+                continue;
                     }
                     disp = displacement(locctr, operandHex, base, e, b, p);
                 }
@@ -216,8 +236,12 @@ vector<Instruction> Pass2::execute() {
 
             if(b && disp == 16777215){
                 opTab[j].setPass2ErrMsg("base relative while base is not set");
+                opTab[j].setOpCode(0);
+                continue;
             } else if (disp == 16777215){
                 opTab[j].setPass2ErrMsg("address overflow");
+                opTab[j].setOpCode(0);
+                continue;
             }
         } else {
             n = true;
