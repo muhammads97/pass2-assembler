@@ -7,25 +7,23 @@ LC    Code         Source Statement
 000000                                                      .2345678901234567890123456789
 000000                                                      .  SET elements of a 100-word array to 0
 000000               prog         .start        0000         
-000000     03214D    bgn          .lda          zero         
+000000     000000    bgn          .lda          zero         
+symbol not found or address exceeded size
 000003     0F201B                 .sta          index        
 000006     072018    loop         .ldx          index        
-000009     032144                 .lda          zero         
+000009     000000                 .lda          zero         
+symbol not found or address exceeded size
 00000c     0FA015                 .sta          alpha,x      
 00000f     03200F                 .lda          index        
-000012     1B2141                 .add          three        
+000012     1B213E                 .add          three        
 000015     0F2009                 .sta          index        
-000018     2B2138                 .comp         k300         
+000018     2B2135                 .comp         k300         
 00001b     3B2FE8                 .jlt          loop         
 00001e     3C2FFD                 .j            *            
-000021                                                      .
 000021               index        .resw         1            
-000024                                                      .
 000024               alpha        .resw         100          
-000150                                                      .
-000150     000000    zero         .word         0            
-000153     00012C    k300         .word         300          
-000156     000003    three        .word         3            
-000159                            .end                       
+000150     00012C    k300         .word         300          
+000153     000003    three        .word         3            
+000156                            .end                       
 
->>    s u c c e s s f u l    a s s e m b l y
+>>    u n s u c c e s s f u l    a s s e m b l y

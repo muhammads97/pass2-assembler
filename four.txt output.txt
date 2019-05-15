@@ -14,15 +14,11 @@
 000018                         comp              k300              
 00001b                         jlt               loop              
 00001e                         j                 *                 
-000021                                                             .
 000021       index             resw              1                 
-000024                                                             .
 000024       alpha             resw              100               
-000150                                                             .
-000150       zero              word              0                 
-000153       k300              word              300               
-000156       three             word              3                 
-000159                         end                                 
+000150       k300              word              300               
+000153       three             word              3                 
+000156                         end                                 
 
 
 >>    END    Of    Pass    One 
@@ -31,9 +27,8 @@
 
          NAME              VALUE               ABSOL/RELOC 
          ---------------------------------------------------------
-         k300              339                  relocatable
-         zero              336                  relocatable
-         three             342                  relocatable
+         k300              336                  relocatable
+         three             339                  relocatable
          alpha             36                  relocatable
          prog              0                  relocatable
          index             33                  relocatable

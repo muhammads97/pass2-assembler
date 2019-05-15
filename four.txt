@@ -12,12 +12,8 @@ LOOP     LDX     INDEX
          COMP    K300
          JLT     LOOP
          J       *
-.
 INDEX    RESW    1
-.
 ALPHA    RESW    100
-.
-ZERO     WORD    0
 K300     WORD    300
 THREE    WORD    3
          END     BGN

@@ -158,7 +158,7 @@ vector<Instruction> Pass2::execute() {
                 if(operandHex == 16777215) {
                     opTab[j].setPass2ErrMsg("symbol not found or address exceeded size");
                     opTab[j].setOpCode(0);
-                    j++
+                    j++;
                     continue;
                 }
                 disp = displacement(locctr, operandHex, base, e, b, p);

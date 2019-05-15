@@ -10,13 +10,13 @@ LC    Code         Source Statement
 000000     030003    bgn          .lda          =c'ahm'      
 000003                            .ltorg                     
 000003     61686D    *            .=c'ahm'                   
-000006     030580    h            .byte         c'EOF'       
+000006     000064    h            .byte         c'EOF'       
 000009     032017                 .lda          beta         
 00000c     A051                   .compr        t,x          
 00000e     210004                 .mul          #4           
 000011     0F2018                 .sta          alpha        
-000014     FFFFFF                 .lda          md7t         
-base relative while base is not set
+000014     000000                 .lda          md7t         
+symbol not found or address exceeded size
 000017     210003                 .mul          #3           
 00001a     1B200F                 .add          alpha        
 00001d     0F200C                 .sta          alpha        

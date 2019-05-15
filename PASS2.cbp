@@ -38,6 +38,7 @@
 		<Unit filename="include/Instruction.h" />
 		<Unit filename="include/Ob.h" />
 		<Unit filename="include/OpCodeParameters.h" />
+		<Unit filename="include/OpCodes.h" />
 		<Unit filename="include/Pass1.h" />
 		<Unit filename="include/Pass2.h" />
 		<Unit filename="include/ReadFile.h" />
@@ -47,11 +48,13 @@
 		<Unit filename="include/objectCodeMap.h" />
 		<Unit filename="include/parser.h" />
 		<Unit filename="include/print.h" />
+		<Unit filename="include/writepass.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/AddressTranslation.cpp" />
 		<Unit filename="src/Instruction.cpp" />
 		<Unit filename="src/Ob.cpp" />
 		<Unit filename="src/OpCodeParameters.cpp" />
+		<Unit filename="src/OpCodes.cpp" />
 		<Unit filename="src/Pass1.cpp" />
 		<Unit filename="src/Pass2.cpp" />
 		<Unit filename="src/ReadFile.cpp" />
@@ -61,6 +64,7 @@
 		<Unit filename="src/objectCodeMap.cpp" />
 		<Unit filename="src/parser.cpp" />
 		<Unit filename="src/print.cpp" />
+		<Unit filename="src/writepass.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
