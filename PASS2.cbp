@@ -54,7 +54,6 @@
 		<Unit filename="src/Instruction.cpp" />
 		<Unit filename="src/Ob.cpp" />
 		<Unit filename="src/OpCodeParameters.cpp" />
-		<Unit filename="src/OpCodes.cpp" />
 		<Unit filename="src/Pass1.cpp" />
 		<Unit filename="src/Pass2.cpp" />
 		<Unit filename="src/ReadFile.cpp" />

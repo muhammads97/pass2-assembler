@@ -4,13 +4,14 @@
 BGN      LDA     =c'ahm'
          ltorg
 h        byte    c'EOF'
-         LDA     BETA
-  
+         LDA     BETA-h
+  ALPHA    RESW    1
          compr   t,x
          MUL     #4
          STA     ALPHA
-         LDA     md7t
+         LDA     ALPHA
          MUL     #3
+ahmed         EQU     ALPHA-BGN
          ADD     ALPHA
          STA     ALPHA
          J       *
@@ -18,5 +19,5 @@ h        byte    c'EOF'
 BETA     WORD    2
 GAMMA    WORD    2
 M        WORD    4
-ALPHA    RESW    1
+
          END    

@@ -16,7 +16,7 @@ int main()
 {
     string s;
     getline(cin,s);
-    regex second ("( *pass1 *)([a-zA-Z0-9\\.]*(txt))",  std::regex_constants::icase );
+    regex second ("( *assemble *)([a-zA-Z0-9\\.]*(txt))",  std::regex_constants::icase );
     smatch  m;
     regex_search(s, m, second);
     string file_name =   m.str(m.size() -2);

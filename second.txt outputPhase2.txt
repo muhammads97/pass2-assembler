@@ -10,22 +10,22 @@ LC    Code         Source Statement
 000000     030003    bgn          .lda          =c'ahm'      
 000003                            .ltorg                     
 000003     61686D    *            .=c'ahm'                   
-000006     000064    h            .byte         c'EOF'       
-000009     032017                 .lda          beta         
-00000c     A051                   .compr        t,x          
-00000e     210004                 .mul          #4           
-000011     0F2018                 .sta          alpha        
-000014     000000                 .lda          md7t         
-symbol not found or address exceeded size
-000017     210003                 .mul          #3           
-00001a     1B200F                 .add          alpha        
-00001d     0F200C                 .sta          alpha        
-000020     3C2FFD                 .j            *            
-000023                                                      .
-000023     000002    beta         .word         2            
-000026     000002    gamma        .word         2            
-000029     000004    m            .word         4            
-00002c               alpha        .resw         1            
+000006     1320580   h            .byte         c'EOF'       
+000009     032014                 .lda          beta-h       
+00000c               alpha        .resw         1            
+00000f     A051                   .compr        t,x          
+000011     210004                 .mul          #4           
+000014     0F2FF5                 .sta          alpha        
+000017     032FF2                 .lda          alpha        
+00001a     210003                 .mul          #3           
+00001d               ahmed        .equ          alpha-bgn    
+00001d     1B2FEC                 .add          alpha        
+000020     0F2FE9                 .sta          alpha        
+000023     3C2FFD                 .j            *            
+000026                                                      .
+000026     000002    beta         .word         2            
+000029     000002    gamma        .word         2            
+00002c     000004    m            .word         4            
 00002f                            .end                       
 
->>    u n s u c c e s s f u l    a s s e m b l y
+>>    s u c c e s s f u l    a s s e m b l y

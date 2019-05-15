@@ -7,20 +7,21 @@
 000003                         ltorg                               
 000003       *                 =c'ahm'                             
 000006       h                 byte              c'EOF'            
-000009                         lda               beta              
-00000c                         compr             t,x               
-00000e                         mul               #4                
-000011                         sta               alpha             
-000014                         lda               md7t              
-000017                         mul               #3                
-00001a                         add               alpha             
-00001d                         sta               alpha             
-000020                         j                 *                 
-000023                                                             .
-000023       beta              word              2                 
-000026       gamma             word              2                 
-000029       m                 word              4                 
-00002c       alpha             resw              1                 
+000009                         lda               beta-h            
+00000c       alpha             resw              1                 
+00000f                         compr             t,x               
+000011                         mul               #4                
+000014                         sta               alpha             
+000017                         lda               alpha             
+00001a                         mul               #3                
+00001d       ahmed             equ               alpha-bgn         
+00001d                         add               alpha             
+000020                         sta               alpha             
+000023                         j                 *                 
+000026                                                             .
+000026       beta              word              2                 
+000029       gamma             word              2                 
+00002c       m                 word              4                 
 00002f                         end                                 
 
 
@@ -30,10 +31,11 @@
 
          NAME              VALUE               ABSOL/RELOC 
          ---------------------------------------------------------
-         alpha             44                  relocatable
-         m                 41                  relocatable
-         bgn               0                  relocatable
+         m                 44                  relocatable
+         gamma             41                  relocatable
+         beta              38                  relocatable
          h                 6                  relocatable
-         beta              35                  relocatable
-         gamma             38                  relocatable
+         alpha             12                  relocatable
+         bgn               0                  relocatable
+         ahmed             12                  absolute
      ******************************************************************** 
