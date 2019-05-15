@@ -1,0 +1,31 @@
+>>   S t a r t   o f    P a s s   I I 
+
+>>   A s s e m b l e d    p r o g r a m     l i s t i n g 
+
+LC    Code         Source Statement 
+
+000000                                                      .23456789012345678901234567890123456
+000000                                                      .   
+000000                            .start        0            
+000000     030003    bgn          .lda          =c'ahm'      
+000003                            .ltorg                     
+000003     61686D    *            .=c'ahm'                   
+000006     030580    h            .byte         c'EOF'       
+000009     032017                 .lda          beta         
+00000c     A051                   .compr        t,x          
+00000e     210004                 .mul          #4           
+000011     0F2018                 .sta          alpha        
+000014     FFFFFF                 .lda          md7t         
+base relative while base is not set
+000017     210003                 .mul          #3           
+00001a     1B200F                 .add          alpha        
+00001d     0F200C                 .sta          alpha        
+000020     3C2FFD                 .j            *            
+000023                                                      .
+000023     000002    beta         .word         2            
+000026     000002    gamma        .word         2            
+000029     000004    m            .word         4            
+00002c               alpha        .resw         1            
+00002f                            .end                       
+
+>>    u n s u c c e s s f u l    a s s e m b l y

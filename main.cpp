@@ -16,7 +16,7 @@ int main()
 {
     string s;
     getline(cin,s);
-    regex second ("( *pass1 *)([a-zA-Z0-9\\.]*(txt))",  std::regex_constants::icase );
+    regex second ("( *pass2 *)([a-zA-Z0-9\\.]*(txt))",  std::regex_constants::icase );
     smatch  m;
     regex_search(s, m, second);
 

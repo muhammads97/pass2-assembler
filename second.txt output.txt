@@ -8,12 +8,10 @@
 000003       *                 =c'ahm'                             
 000006       h                 byte              c'EOF'            
 000009                         lda               beta              
-00000c                                                             
-didn't match any valid instruction
 00000c                         compr             t,x               
 00000e                         mul               #4                
 000011                         sta               alpha             
-000014                         lda               gamma             
+000014                         lda               md7t              
 000017                         mul               #3                
 00001a                         add               alpha             
 00001d                         sta               alpha             
@@ -39,19 +37,3 @@ didn't match any valid instruction
          beta              35                  relocatable
          gamma             38                  relocatable
      ******************************************************************** 
-printtttttttttttttttttttttttt
-030003  KK
-454f46  KK
-032017  KK
-A051  KK
-210004  KK
-0F2018  KK
-03200F  KK
-210003  KK
-1B200F  KK
-0F200C  KK
-3C2FFD  KK
-3C2FFD  KK
-000002  KK
-000002  KK
-000004  KK

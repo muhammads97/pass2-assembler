@@ -16,7 +16,7 @@ int main()
 {
     string s;
     getline(cin,s);
-    regex second ("( *pass1 *)([a-zA-Z0-9\\.]*(txt))",  std::regex_constants::icase );
+    regex second ("( *pass2 *)([a-zA-Z0-9\\.]*(txt))",  std::regex_constants::icase );
     smatch  m;
     regex_search(s, m, second);
 
@@ -31,8 +31,20 @@ int main()
     v = pass2.execute();
     WriteFile p(v,builder.literals_data,builder.pc,builder.symbols,file_name);
     writepass sp(v,file_name);
-    printObjectCode(v);
+    bool can = true;
+    for(int i = 0; i < v.size(); i++){
+        if(v[i].isPass2Err() || v[i].isWrong()){
+            can = false;
+            break;
+        }
+    }
+    if(can)
+        printObjectCode(v);
+    else{
 
+        freopen("objectcode.txt","w",stdout);
+        cout<<" ";
+    }
 
     return 0;
 }
